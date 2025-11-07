@@ -1,0 +1,241 @@
+Detailed summary
+
+### **1. Title Slide**
+
+* **Title:** Insta Mall — Inventory Management & Local Marketplace
+* **Subtitle:** Offline → Online Inventory, Buyer Map Visibility & Growth Platform for Retail Shops (Pakistan)
+* **Tagline:** “From Local to Visible — Simple, Affordable, Reliable”
+
+---
+
+### **2. Elevator Pitch**
+
+* A single software handling shop operations, cloud backup, and a buyer marketplace.
+* Buyers see only subscribed shops on a map—subscriptions act as marketing.
+* Works offline, syncs online when available.
+* Affordable (Rs 15k–20k setup) with monthly subscriptions.
+
+---
+
+### **3. Problem Statement**
+
+Shopkeepers face:
+
+1. Manual or spreadsheet inventories → errors and losses.
+2. No digital visibility to local buyers.
+3. Poor expiry/perishable management.
+4. Expensive vendor setups (30–50k).
+5. Fear of data loss, lack of training, hidden costs.
+
+---
+
+### **4. Our Solution**
+
+**SmartShop Solution = Product + Marketplace**
+
+* Hybrid system (Offline + Cloud).
+* Buyer app on Play Store shows subscribed shops with map routes.
+* Customizable UI (50+ themes, logos, brand colors).
+* Free training, affordable pricing, easy data recovery.
+* Flexible columns, custom reports, and formulas (e.g., Profit %).
+
+---
+
+### **5. Core Product Features (Shop Owner App)**
+
+* Offline-first inventory system (add/edit/delete SKUs).
+* Low-stock alerts & reorder suggestions.
+* Barcode/QR scanning, product image uploads.
+* 50+ UI themes, branded invoices, export to Excel/PDF.
+* Expiry tracking & custom formulas (e.g., Profit %).
+
+---
+
+### **6. Cloud & Backup Features**
+
+* Hybrid mode: local DB + daily cloud backup.
+* Tiered storage: 1GB / 3GB / 10GB per plan.
+* One-click restore, automatic image compression.
+* Local export option for .backup files.
+
+---
+
+### **7. Buyer App Features**
+
+* Buyers can search nearby shops by product name.
+* Shops listed only if subscribed.
+* Shop profiles (logo, hours, contact, offers).
+* Reviews, ratings, and distance sorting.
+* Map view with polyline routes & Google Maps integration.
+
+---
+
+### **8. Map & Visibility Rule**
+
+* Only subscribed shops appear in Buyer App.
+* Visibility hierarchy:
+
+  * **Standard:** listed
+  * **Professional:** priority
+  * **Full:** featured/top listing
+* Promotions visible only to Full plan users.
+
+---
+
+### **9. Subscription Plans**
+
+* Monthly plans for shop owners (Standard, Professional, Full).
+
+---
+
+### **10. What’s Included Where (Feature Matrix)**
+
+* **Cloud Storage:** 1GB / 3GB / 10GB tiers.
+* **Data Recovery:** included from Standard; Full = free reinstallation.
+* **Visibility:** Standard → listed, Pro → priority, Full → featured.
+* **Branding:** scales with plan.
+* **Promotions:** Full = unlimited, Pro = 5 products.
+
+---
+
+### **11. Pricing Rationale & Value Proposition**
+
+* Rs 300/month = affordable marketing + cloud backup.
+* Branding improves visibility and sales.
+* Priority listings drive real-world footfall.
+* Pay-as-you-grow avoids high upfront costs.
+
+---
+
+### **12. Onboarding & Support**
+
+* Free YouTube tutorials (Urdu + English).
+* Free onsite training (first visit).
+* Data recovery included from Standard.
+* WhatsApp + ticketing support; 24/7 for Full.
+
+---
+
+### **13. Competitor Analysis**
+
+**Competitors:**
+
+* Tally, Marg ERP (legacy, poor UI).
+* Zoho Inventory, Vyapar (cloud-first, not offline-ready).
+* POSEase, PakPOS (high setup cost, limited hybrid options).
+  **SmartShop advantages:** low setup, offline-first, marketplace visibility, free training.
+
+---
+
+### **14. Go-to-Market Strategy**
+
+**Phase 1 (0–6 months):**
+
+* Pilot in Lahore/Karachi: onboard 100–200 shops.
+* YouTube/Facebook ads targeting shopkeepers.
+* Demo booths at local markets.
+* 3-month trial for early adopters.
+* Partner with hardware resellers & distributors.
+
+---
+
+### **15. Growth Strategy (6–18 months)**
+
+1. Expand to 5 major cities.
+2. Build reseller/training certification network.
+3. Add promotions & analytics.
+4. Launch ads & sponsored placements.
+5. Introduce in-app commission system.
+
+---
+
+### **16. Product Roadmap**
+
+* **MVP:** Seller & Buyer apps + subscription billing.
+* **Phase 2:** Promotions, analytics, compression.
+* **Phase 3:** Orders, delivery, wallet/payments.
+* **Phase 4:** Distributor edition, multi-branch.
+
+---
+
+### **17. Technical Architecture**
+
+* **Devices:** Electron desktop, Flutter mobile apps.
+* **Backend:** Node.js / Django with REST APIs.
+* **Database:** Firestore or PostgreSQL.
+* **Storage:** Firebase / S3.
+* **Maps:** Google Maps SDK, Places & Directions APIs.
+* **Payments:** JazzCash, Easypaisa for recurring billing.
+
+---
+
+### **18. Development Requirements**
+
+* (Detailed breakdown not included in extracted text, likely developer hours or team roles).
+
+---
+
+### **19. Financial Projections (Year 1 Example)**
+
+* **Setup revenue:** 100 shops × Rs 17.5k = Rs 1.75M.
+* **Subscriptions:** 300 shops → Rs 2.16M/year.
+* **Add-ons:** ~Rs 200k.
+* **Total Revenue:** ≈ Rs 4.1M first year.
+
+---
+
+### **20. KPIs to Track**
+
+* Monthly/annual recurring revenue (MRR/ARR).
+* Active buyers & searches/day.
+* Shop onboarding rate.
+* Trial → paid conversion.
+* Churn < 5%.
+* Support response SLA & NPS.
+* Average revenue per shop (ARPS).
+
+---
+
+### **21. Risks & Mitigations**
+
+1. **Sync conflicts:** queue-based sync handling.
+2. **Cloud cost growth:** compress & charge by GB.
+3. **Low adoption:** local training + simple UI.
+4. **Competition:** map visibility + lower pricing.
+
+---
+
+### **22. Sales & Marketing Plan**
+
+* **Grassroots:** demos, reseller partnerships.
+* **Promotions:** trials & referral discounts.
+* **Online:** tutorials, Facebook/WhatsApp outreach.
+* **PR:** collect testimonials & case studies.
+
+---
+
+### **23. Operational Plan & Team**
+
+* Founder: product vision & partnerships.
+* Dev team: 3–5 engineers (frontend, backend, QA).
+* Support & onboarding: field agents.
+* Finance & Cloud ops: billing/storage.
+* Marketing: content creator & social media manager.
+
+---
+
+### **24. Call to Action**
+
+* Finalize MVP & hire developers.
+* Prepare training materials & videos.
+* Pilot with 50–100 shops.
+* Launch Buyer App MVP.
+* Set up JazzCash/Easypaisa billing.
+
+---
+
+### **25. Contact & Closing**
+
+* Founder: [Name, email, WhatsApp placeholder].
+* Call to action: “Book a demo — we’ll install a pilot for your shop.”
+* Thank you slide.

@@ -38,7 +38,7 @@ function Dashboard() {
     {
       title: "Use Case Diagram",
       description:
-        "Visual representation of system interactions with users and external systems",
+        "Visual representation of system functionality and user interactions with external systems",
       icon: Users,
       color: "text-white",
       bgColor: "bg-linear-to-br from-emerald-500 to-emerald-600",
@@ -48,7 +48,7 @@ function Dashboard() {
     {
       title: "Class Diagram",
       description:
-        "Object-oriented design showing classes, their attributes, and relationships",
+        "Object-oriented design showing classes, their attributes, methods, and relationships",
       icon: GitBranch,
       color: "text-white",
       bgColor: "bg-linear-to-br from-violet-500 to-violet-600",
@@ -58,7 +58,7 @@ function Dashboard() {
     {
       title: "Sequence Diagram",
       description:
-        "Time-ordered interactions between system components and actors",
+        "Time-ordered interactions between system components, objects, and actors",
       icon: ArrowRight,
       color: "text-white",
       bgColor: "bg-linear-to-br from-amber-500 to-amber-600",
@@ -68,7 +68,7 @@ function Dashboard() {
     {
       title: "Activity Diagram",
       description:
-        "Workflow visualization showing business processes and decision points",
+        "Workflow visualization showing business processes, activities, and decision points",
       icon: Activity,
       color: "text-white",
       bgColor: "bg-linear-to-br from-rose-500 to-rose-600",
@@ -78,7 +78,7 @@ function Dashboard() {
     {
       title: "Data Flow Diagram (DFD)",
       description:
-        "Data movement and transformation processes within the system",
+        "Data movement and transformation processes within the system architecture",
       icon: Database,
       color: "text-white",
       bgColor: "bg-linear-to-br from-indigo-500 to-indigo-600",
@@ -86,9 +86,9 @@ function Dashboard() {
       route: "/data-flow-diagram",
     },
     {
-      title: "Entity-Relationship Diagram (ERD)",
+      title: "Entity-Relation Diagram",
       description:
-        "Database schema design showing entities and their relationships",
+        "Database schema design showing entities, their attributes, and relationships",
       icon: Link,
       color: "text-white",
       bgColor: "bg-linear-to-br from-teal-500 to-teal-600",
@@ -98,7 +98,7 @@ function Dashboard() {
     {
       title: "Component Diagram",
       description:
-        "System architecture showing components and their dependencies",
+        "System architecture showing software components and their dependencies",
       icon: Settings,
       color: "text-white",
       bgColor: "bg-linear-to-br from-pink-500 to-pink-600",
@@ -107,7 +107,8 @@ function Dashboard() {
     },
     {
       title: "State Machine Diagram",
-      description: "State transitions for orders, inventory, and system states",
+      description:
+        "State transitions for system objects, processes, and lifecycle management",
       icon: Zap,
       color: "text-white",
       bgColor: "bg-linear-to-br from-orange-500 to-orange-600",
@@ -117,7 +118,7 @@ function Dashboard() {
     {
       title: "Deployment Diagram",
       description:
-        "Physical system architecture and hardware/software deployment",
+        "Physical system architecture showing hardware nodes and software deployment",
       icon: Server,
       color: "text-white",
       bgColor: "bg-linear-to-br from-slate-500 to-slate-600",
@@ -151,7 +152,7 @@ function Dashboard() {
             return (
               <Card
                 key={index}
-                className={`group relative overflow-hidden border-0 ${card.shadowColor} shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm hover:bg-white hover:scale-[1.02] cursor-pointer hover:-translate-y-1`}
+                className={`group relative overflow-hidden border-0 ${card.shadowColor} shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm hover:bg-white hover:scale-[1.02] cursor-pointer hover:-translate-y-1 min-h-[280px] flex flex-col`}
               >
                 <div className="absolute inset-0 bg-linear-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <CardHeader className="pb-4 relative z-10">
@@ -164,8 +165,8 @@ function Dashboard() {
                     {card.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="pt-0 relative z-10">
-                  <CardDescription className="text-slate-600 mb-6 leading-relaxed text-sm">
+                <CardContent className="pt-0 relative z-10 flex-1 flex flex-col justify-between">
+                  <CardDescription className="text-slate-600 mb-6 leading-relaxed text-sm flex-1">
                     {card.description}
                   </CardDescription>
                   <Button
