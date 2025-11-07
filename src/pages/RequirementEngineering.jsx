@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { ArrowLeft, Zap } from "lucide-react";
 
-export default function StateMachineDiagram() {
+export default function RequirementEngineering() {
   const navigate = useNavigate();
 
   return (

@@ -19,113 +19,115 @@ import {
   Zap,
   Server,
   ShoppingCart,
+  ClipboardList
 } from "lucide-react";
 
 function Dashboard() {
   const navigate = useNavigate();
 
   const diagramCards = [
-    {
-      title: "Full Project Documentation",
-      description:
-        "Comprehensive system overview and development guide with detailed specifications and implementation details",
-      icon: FileText,
-      color: "text-white",
-      bgColor: "bg-linear-to-br from-blue-500 to-blue-600",
-      shadowColor: "shadow-blue-500/20",
-      route: "/full-project-documentation",
-    },
-    {
-      title: "Use Case Diagram",
-      description:
-        "Visual representation of system functionality and user interactions with external systems",
-      icon: Users,
-      color: "text-white",
-      bgColor: "bg-linear-to-br from-emerald-500 to-emerald-600",
-      shadowColor: "shadow-emerald-500/20",
-      route: "/use-case-diagram",
-    },
-    {
-      title: "Class Diagram",
-      description:
-        "Object-oriented design showing classes, their attributes, methods, and relationships",
-      icon: GitBranch,
-      color: "text-white",
-      bgColor: "bg-linear-to-br from-violet-500 to-violet-600",
-      shadowColor: "shadow-violet-500/20",
-      route: "/class-diagram",
-    },
-    {
-      title: "Sequence Diagram",
-      description:
-        "Time-ordered interactions between system components, objects, and actors",
-      icon: ArrowRight,
-      color: "text-white",
-      bgColor: "bg-linear-to-br from-amber-500 to-amber-600",
-      shadowColor: "shadow-amber-500/20",
-      route: "/sequence-diagram",
-    },
-    {
-      title: "Activity Diagram",
-      description:
-        "Workflow visualization showing business processes, activities, and decision points",
-      icon: Activity,
-      color: "text-white",
-      bgColor: "bg-linear-to-br from-rose-500 to-rose-600",
-      shadowColor: "shadow-rose-500/20",
-      route: "/activity-diagram",
-    },
-    {
-      title: "Data Flow Diagram (DFD)",
-      description:
-        "Data movement and transformation processes within the system architecture",
-      icon: Database,
-      color: "text-white",
-      bgColor: "bg-linear-to-br from-indigo-500 to-indigo-600",
-      shadowColor: "shadow-indigo-500/20",
-      route: "/data-flow-diagram",
-    },
-    {
-      title: "Entity-Relation Diagram",
-      description:
-        "Database schema design showing entities, their attributes, and relationships",
-      icon: Link,
-      color: "text-white",
-      bgColor: "bg-linear-to-br from-teal-500 to-teal-600",
-      shadowColor: "shadow-teal-500/20",
-      route: "/entity-relationship-diagram",
-    },
-    {
-      title: "Component Diagram",
-      description:
-        "System architecture showing software components and their dependencies",
-      icon: Settings,
-      color: "text-white",
-      bgColor: "bg-linear-to-br from-pink-500 to-pink-600",
-      shadowColor: "shadow-pink-500/20",
-      route: "/component-diagram",
-    },
-    {
-      title: "State Machine Diagram",
-      description:
-        "State transitions for system objects, processes, and lifecycle management",
-      icon: Zap,
-      color: "text-white",
-      bgColor: "bg-linear-to-br from-orange-500 to-orange-600",
-      shadowColor: "shadow-orange-500/20",
-      route: "/state-machine-diagram",
-    },
-    {
-      title: "Deployment Diagram",
-      description:
-        "Physical system architecture showing hardware nodes and software deployment",
-      icon: Server,
-      color: "text-white",
-      bgColor: "bg-linear-to-br from-slate-500 to-slate-600",
-      shadowColor: "shadow-slate-500/20",
-      route: "/deployment-diagram",
-    },
-  ];
+  {
+    title: "Full Project Documentation",
+    description:
+      "Comprehensive system overview and development guide with detailed specifications and implementation details",
+    icon: FileText,
+    color: "text-white",
+    bgColor: "bg-linear-to-br from-blue-500 to-blue-600",
+    shadowColor: "shadow-blue-500/20",
+    route: "/full-project-documentation",
+  },
+  {
+    title: "Requirement Engineering",
+    description:
+      "Detailed process of gathering, analyzing, documenting, and managing system requirements for successful project delivery",
+    icon: ClipboardList,
+    color: "text-white",
+    bgColor: "bg-linear-to-br from-green-500 to-green-600",
+    shadowColor: "shadow-green-500/20",
+    route: "/requirement-engineering",
+  },
+  {
+    title: "Use Case Diagram",
+    description:
+      "Visual representation of system functionality and user interactions with external systems",
+    icon: Users,
+    color: "text-white",
+    bgColor: "bg-linear-to-br from-emerald-500 to-emerald-600",
+    shadowColor: "shadow-emerald-500/20",
+    route: "/use-case-diagram",
+  },
+  {
+    title: "Class Diagram",
+    description:
+      "Object-oriented design showing classes, their attributes, methods, and relationships",
+    icon: GitBranch,
+    color: "text-white",
+    bgColor: "bg-linear-to-br from-violet-500 to-violet-600",
+    shadowColor: "shadow-violet-500/20",
+    route: "/class-diagram",
+  },
+  {
+    title: "Sequence Diagram",
+    description:
+      "Time-ordered interactions between system components, objects, and actors",
+    icon: ArrowRight,
+    color: "text-white",
+    bgColor: "bg-linear-to-br from-amber-500 to-amber-600",
+    shadowColor: "shadow-amber-500/20",
+    route: "/sequence-diagram",
+  },
+  {
+    title: "Activity Diagram",
+    description:
+      "Workflow visualization showing business processes, activities, and decision points",
+    icon: Activity,
+    color: "text-white",
+    bgColor: "bg-linear-to-br from-rose-500 to-rose-600",
+    shadowColor: "shadow-rose-500/20",
+    route: "/activity-diagram",
+  },
+  {
+    title: "Data Flow Diagram (DFD)",
+    description:
+      "Data movement and transformation processes within the system architecture",
+    icon: Database,
+    color: "text-white",
+    bgColor: "bg-linear-to-br from-indigo-500 to-indigo-600",
+    shadowColor: "shadow-indigo-500/20",
+    route: "/data-flow-diagram",
+  },
+  {
+    title: "Entity-Relation Diagram",
+    description:
+      "Database schema design showing entities, their attributes, and relationships",
+    icon: Link,
+    color: "text-white",
+    bgColor: "bg-linear-to-br from-teal-500 to-teal-600",
+    shadowColor: "shadow-teal-500/20",
+    route: "/entity-relationship-diagram",
+  },
+  {
+    title: "Component Diagram",
+    description:
+      "System architecture showing software components and their dependencies",
+    icon: Settings,
+    color: "text-white",
+    bgColor: "bg-linear-to-br from-pink-500 to-pink-600",
+    shadowColor: "shadow-pink-500/20",
+    route: "/component-diagram",
+  },
+  {
+    title: "Deployment Diagram",
+    description:
+      "Physical system architecture showing hardware nodes and software deployment",
+    icon: Server,
+    color: "text-white",
+    bgColor: "bg-linear-to-br from-slate-500 to-slate-600",
+    shadowColor: "shadow-slate-500/20",
+    route: "/deployment-diagram",
+  },
+];
+
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-100">

@@ -9,7 +9,7 @@ import ActivityDiagram from "./pages/ActivityDiagram";
 import DataFlowDiagram from "./pages/DataFlowDiagram";
 import EntityRelationshipDiagram from "./pages/EntityRelationshipDiagram";
 import ComponentDiagram from "./pages/ComponentDiagram";
-import StateMachineDiagram from "./pages/StateMachineDiagram";
+import RequirementEngineering from "./pages/RequirementEngineering";
 import DeploymentDiagram from "./pages/DeploymentDiagram";
 import Dashboard from "./components/Dashboard";
 
@@ -31,7 +31,10 @@ function App() {
         element={<EntityRelationshipDiagram />}
       />
       <Route path="/component-diagram" element={<ComponentDiagram />} />
-      <Route path="/state-machine-diagram" element={<StateMachineDiagram />} />
+      <Route
+        path="/requirement-engineering"
+        element={<RequirementEngineering />}
+      />
       <Route path="/deployment-diagram" element={<DeploymentDiagram />} />
     </Routes>
   );
