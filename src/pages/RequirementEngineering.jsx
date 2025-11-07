@@ -313,7 +313,7 @@ export default function RequirementEngineering() {
                 👥 User Stories
               </h3>
               <div className="space-y-4">
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4">
+                <div className="bg-linear-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4">
                   <div className="flex items-start">
                     <span className="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-3 mt-0.5">
                       US-001
@@ -335,7 +335,7 @@ export default function RequirementEngineering() {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-4">
+                <div className="bg-linear-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg p-4">
                   <div className="flex items-start">
                     <span className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded mr-3 mt-0.5">
                       US-002
@@ -356,7 +356,7 @@ export default function RequirementEngineering() {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-purple-50 to-violet-50 border border-purple-200 rounded-lg p-4">
+                <div className="bg-linear-to-r from-purple-50 to-violet-50 border border-purple-200 rounded-lg p-4">
                   <div className="flex items-start">
                     <span className="bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded mr-3 mt-0.5">
                       US-003
@@ -377,7 +377,7 @@ export default function RequirementEngineering() {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-4">
+                <div className="bg-linear-to-r from-orange-50 to-red-50 border border-orange-200 rounded-lg p-4">
                   <div className="flex items-start">
                     <span className="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded mr-3 mt-0.5">
                       US-004
@@ -644,7 +644,7 @@ export default function RequirementEngineering() {
                 ✅ Acceptance Criteria
               </h3>
               <div className="space-y-4">
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-lg p-4">
+                <div className="bg-linear-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-lg p-4">
                   <h4 className="font-semibold text-emerald-900 mb-2">
                     Minimum Viable Product (MVP) Criteria
                   </h4>
@@ -660,7 +660,7 @@ export default function RequirementEngineering() {
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200 rounded-lg p-4">
+                <div className="bg-linear-to-r from-cyan-50 to-blue-50 border border-cyan-200 rounded-lg p-4">
                   <h4 className="font-semibold text-cyan-900 mb-2">
                     Phase 2 Enhancement Criteria
                   </h4>
@@ -674,7 +674,7 @@ export default function RequirementEngineering() {
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-r from-violet-50 to-purple-50 border border-violet-200 rounded-lg p-4">
+                <div className="bg-linear-to-r from-violet-50 to-purple-50 border border-violet-200 rounded-lg p-4">
                   <h4 className="font-semibold text-violet-900 mb-2">
                     Quality Assurance Criteria
                   </h4>
@@ -701,7 +701,7 @@ export default function RequirementEngineering() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-slate-100 to-slate-200 border border-slate-300 rounded-lg p-8 mt-12">
+            <div className="bg-linear-to-r from-slate-100 to-slate-200 border border-slate-300 rounded-lg p-8 mt-12">
               <h3 className="text-xl font-semibold text-slate-900 mb-4">
                 📊 Requirements Engineering Summary
               </h3>
