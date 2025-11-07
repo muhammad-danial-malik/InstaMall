@@ -1,13 +1,28 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { ArrowLeft, FileText } from "lucide-react";
+import {
+  ArrowLeft,
+  FileText,
+  ShoppingCart,
+  Store,
+  Settings,
+  Shield,
+  ShieldCheck,
+  Zap,
+  RefreshCw,
+  Rocket,
+  CheckCircle,
+  Smartphone,
+  TrendingUp,
+  Wrench
+} from "lucide-react";
 
 export default function FullProjectDocumentation() {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-100">
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12">
         {/* Header */}
         <div className="mb-8">
           <Button
@@ -24,10 +39,10 @@ export default function FullProjectDocumentation() {
               <FileText className="h-8 w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-slate-900 mb-2">
+              <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
                 Full Project Documentation
               </h1>
-              <p className="text-xl text-slate-600">
+              <p className="text-lg md:text-xl text-slate-600">
                 Everything you need to know about InstaMall
               </p>
             </div>
@@ -35,11 +50,11 @@ export default function FullProjectDocumentation() {
         </div>
 
         {/* Content */}
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8">
           <div className="prose prose-slate max-w-none">
             {/* Executive Summary */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6">
                 What is InstaMall?
               </h2>
               <p className="text-slate-600 mb-6 leading-relaxed">
@@ -75,7 +90,7 @@ export default function FullProjectDocumentation() {
 
             {/* System Architecture */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6">
                 How It All Works Together
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -119,7 +134,7 @@ export default function FullProjectDocumentation() {
 
             {/* Database Design */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6">
                 Smart Data Organization
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
@@ -197,14 +212,17 @@ export default function FullProjectDocumentation() {
 
             {/* User Roles and Permissions */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6">
                 Who Uses InstaMall & What They Can Do
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-blue-900 mb-4">
-                    🛒 Shoppers (Customers)
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <ShoppingCart className="h-6 w-6 text-blue-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-blue-900">
+                      Shoppers (Customers)
+                    </h3>
+                  </div>
                   <ul className="text-blue-800 space-y-2 text-sm">
                     <li>• Discover amazing products from different sellers</li>
                     <li>• Add favorites to cart and complete purchases</li>
@@ -214,9 +232,12 @@ export default function FullProjectDocumentation() {
                   </ul>
                 </div>
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-green-900 mb-4">
-                    🏪 Sellers (Vendors)
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <Store className="h-6 w-6 text-green-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-green-900">
+                      Sellers (Vendors)
+                    </h3>
+                  </div>
                   <ul className="text-green-800 space-y-2 text-sm">
                     <li>• Showcase products with beautiful listings</li>
                     <li>• Manage orders and shipping logistics</li>
@@ -226,9 +247,12 @@ export default function FullProjectDocumentation() {
                   </ul>
                 </div>
                 <div className="bg-purple-50 border border-purple-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-purple-900 mb-4">
-                    ⚙️ Platform Managers (Admins)
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <Settings className="h-6 w-6 text-purple-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-purple-900">
+                      Platform Managers (Admins)
+                    </h3>
+                  </div>
                   <ul className="text-purple-800 space-y-2 text-sm">
                     <li>• Oversee the entire marketplace ecosystem</li>
                     <li>• Support sellers and resolve issues</li>
@@ -242,14 +266,17 @@ export default function FullProjectDocumentation() {
 
             {/* Security Considerations */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6">
                 Your Trust & Safety Come First
               </h2>
               <div className="space-y-6">
                 <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-red-900 mb-4">
-                    🔒 Protecting Your Information
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <Shield className="h-6 w-6 text-red-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-red-900">
+                      Protecting Your Information
+                    </h3>
+                  </div>
                   <ul className="text-red-800 space-y-2">
                     <li>
                       • Bank-level encryption keeps your personal and payment
@@ -274,9 +301,12 @@ export default function FullProjectDocumentation() {
                   </ul>
                 </div>
                 <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-orange-900 mb-4">
-                    🛡️ System Reliability & Monitoring
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <ShieldCheck className="h-6 w-6 text-orange-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-orange-900">
+                      System Reliability & Monitoring
+                    </h3>
+                  </div>
                   <ul className="text-orange-800 space-y-2">
                     <li>
                       • Extra verification steps protect admin accounts from
@@ -300,14 +330,17 @@ export default function FullProjectDocumentation() {
 
             {/* Deployment and Infrastructure */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6">
                 Reliable Performance You Can Count On
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div className="bg-slate-50 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">
-                    ⚡ Lightning-Fast Global Network
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <Zap className="h-6 w-6 text-slate-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      Lightning-Fast Global Network
+                    </h3>
+                  </div>
                   <ul className="text-slate-600 space-y-2">
                     <li>
                       • Worldwide content delivery ensures fast loading
@@ -331,9 +364,12 @@ export default function FullProjectDocumentation() {
                   </ul>
                 </div>
                 <div className="bg-slate-50 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">
-                    🔄 Continuous Improvement Process
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <RefreshCw className="h-6 w-6 text-slate-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      Continuous Improvement Process
+                    </h3>
+                  </div>
                   <ul className="text-slate-600 space-y-2">
                     <li>
                       • Automated updates ensure you always get the latest
@@ -355,9 +391,12 @@ export default function FullProjectDocumentation() {
                 </div>
               </div>
               <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-indigo-900 mb-2">
-                  🚀 Built for Massive Growth
-                </h3>
+                <div className="flex items-center mb-2">
+                  <Rocket className="h-6 w-6 text-indigo-600 mr-3" />
+                  <h3 className="text-lg font-semibold text-indigo-900">
+                    Built for Massive Growth
+                  </h3>
+                </div>
                 <p className="text-indigo-800">
                   Our system automatically grows with your success. Whether
                   serving thousands or millions of customers, InstaMall
@@ -369,14 +408,17 @@ export default function FullProjectDocumentation() {
 
             {/* Development Guidelines */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6">
                 Quality Assurance & Continuous Improvement
               </h2>
               <div className="space-y-6">
                 <div className="bg-slate-50 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">
-                    🏗️ Building with Excellence
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <Wrench className="h-6 w-6 text-slate-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      Building with Excellence
+                    </h3>
+                  </div>
                   <ul className="text-slate-600 space-y-2">
                     <li>
                       • Consistent code standards ensure everything works
@@ -397,9 +439,12 @@ export default function FullProjectDocumentation() {
                   </ul>
                 </div>
                 <div className="bg-slate-50 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-slate-900 mb-4">
-                    ✅ Rigorous Quality Testing
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <CheckCircle className="h-6 w-6 text-slate-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-slate-900">
+                      Rigorous Quality Testing
+                    </h3>
+                  </div>
                   <ul className="text-slate-600 space-y-2">
                     <li>
                       • Multiple testing layers catch issues at every level
@@ -426,14 +471,17 @@ export default function FullProjectDocumentation() {
 
             {/* Future Enhancements */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-6">
                 Future Enhancements
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-linear-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-purple-900 mb-4">
-                    📱 Next 6 Months - Mobile & AI
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <Smartphone className="h-6 w-6 text-purple-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-purple-900">
+                      Next 6 Months - Mobile & AI
+                    </h3>
+                  </div>
                   <ul className="text-purple-800 space-y-2 text-sm">
                     <li>• Mobile app development (React Native)</li>
                     <li>• Advanced AI-powered product recommendations</li>
@@ -442,9 +490,12 @@ export default function FullProjectDocumentation() {
                   </ul>
                 </div>
                 <div className="bg-linear-to-br from-green-50 to-teal-50 border border-green-200 rounded-lg p-6">
-                  <h3 className="text-lg font-semibold text-green-900 mb-4">
-                    🚀 Beyond - Cutting-Edge Innovation
-                  </h3>
+                  <div className="flex items-center mb-4">
+                    <Rocket className="h-6 w-6 text-green-600 mr-3" />
+                    <h3 className="text-lg font-semibold text-green-900">
+                      Beyond - Cutting-Edge Innovation
+                    </h3>
+                  </div>
                   <ul className="text-green-800 space-y-2 text-sm">
                     <li>
                       • Blockchain technology for transparent supply chains
@@ -459,10 +510,13 @@ export default function FullProjectDocumentation() {
               </div>
             </div>
 
-            <div className="bg-linear-to-r from-slate-100 to-slate-200 border border-slate-300 rounded-lg p-8 mt-12">
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                📋 About This Documentation
-              </h3>
+            <div className="bg-linear-to-r from-slate-100 to-slate-200 border border-slate-300 rounded-lg p-6 md:p-8 mt-8 md:mt-12">
+              <div className="flex items-center mb-4">
+                <FileText className="h-6 w-6 text-slate-600 mr-3" />
+                <h3 className="text-lg md:text-xl font-semibold text-slate-900">
+                  About This Documentation
+                </h3>
+              </div>
               <p className="text-slate-700 mb-4">
                 This guide gives you a complete picture of InstaMall - from how
                 we keep your experience smooth and secure, to the exciting
@@ -472,19 +526,19 @@ export default function FullProjectDocumentation() {
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div className="bg-white rounded-lg p-4">
-                  <div className="text-2xl font-bold text-blue-600">✅</div>
+                  <CheckCircle className="h-8 w-8 text-blue-600 mx-auto mb-2" />
                   <div className="text-sm text-slate-600">User-Friendly</div>
                 </div>
                 <div className="bg-white rounded-lg p-4">
-                  <div className="text-2xl font-bold text-green-600">🔒</div>
+                  <Shield className="h-8 w-8 text-green-600 mx-auto mb-2" />
                   <div className="text-sm text-slate-600">Secure</div>
                 </div>
                 <div className="bg-white rounded-lg p-4">
-                  <div className="text-2xl font-bold text-purple-600">⚡</div>
+                  <Zap className="h-8 w-8 text-purple-600 mx-auto mb-2" />
                   <div className="text-sm text-slate-600">Fast</div>
                 </div>
                 <div className="bg-white rounded-lg p-4">
-                  <div className="text-2xl font-bold text-orange-600">🚀</div>
+                  <TrendingUp className="h-8 w-8 text-orange-600 mx-auto mb-2" />
                   <div className="text-sm text-slate-600">Growing</div>
                 </div>
               </div>
