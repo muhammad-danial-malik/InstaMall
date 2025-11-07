@@ -501,7 +501,7 @@ export default function ClassDiagram() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-slate-100 to-slate-200 border border-slate-300 rounded-lg p-8 mt-12">
+            <div className="bg-linear-to-r from-slate-100 to-slate-200 border border-slate-300 rounded-lg p-8 mt-12">
               <h3 className="text-xl font-semibold text-slate-900 mb-4">
                 📋 Class Diagram Summary
               </h3>
