@@ -1,13 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { ArrowLeft, GitBranch } from "lucide-react";
+import {
+  ArrowLeft,
+  GitBranch,
+  Users,
+  Package,
+  Store,
+  Settings,
+  Link,
+  Hammer,
+  ClipboardList,
+} from "lucide-react";
 
 export default function ClassDiagram() {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-100">
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <div className="mb-8">
           <Button
             variant="ghost"
@@ -16,15 +26,15 @@ export default function ClassDiagram() {
           >
             <ArrowLeft className="h-4 w-4 mr-2" /> Back to Dashboard
           </Button>
-          <div className="flex items-center mb-6">
-            <div className="w-16 h-16 bg-linear-to-br from-violet-500 to-violet-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-              <GitBranch className="h-8 w-8 text-white" />
+          <div className="flex flex-col sm:flex-row items-center sm:items-start mb-6">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-linear-to-br from-violet-500 to-violet-600 rounded-2xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-lg">
+              <GitBranch className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-slate-900 mb-2">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2">
                 Class Diagram
               </h1>
-              <p className="text-xl text-slate-600">
+              <p className="text-lg sm:text-xl text-slate-600">
                 Structure of classes and their relationships
               </p>
             </div>
@@ -45,7 +55,8 @@ export default function ClassDiagram() {
             {/* User Management Classes */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                👥 User Management Classes
+                <Users className="h-5 w-5 mr-2 text-slate-600" />
+                User Management Classes
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-4 font-mono text-sm">
@@ -123,7 +134,8 @@ export default function ClassDiagram() {
             {/* Product & Inventory Classes */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                📦 Product & Inventory Classes
+                <Package className="h-5 w-5 mr-2 text-slate-600" />
+                Product & Inventory Classes
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-4 font-mono text-sm">
@@ -201,7 +213,8 @@ export default function ClassDiagram() {
             {/* Shop & Subscription Classes */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                🏪 Shop & Subscription Classes
+                <Store className="h-5 w-5 mr-2 text-slate-600" />
+                Shop & Subscription Classes
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-indigo-50 border-2 border-indigo-200 rounded-lg p-4 font-mono text-sm">
@@ -345,7 +358,8 @@ export default function ClassDiagram() {
             {/* System & Infrastructure Classes */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                ⚙️ System & Infrastructure Classes
+                <Settings className="h-5 w-5 mr-2 text-slate-600" />
+                System & Infrastructure Classes
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 font-mono text-sm">
@@ -392,8 +406,9 @@ export default function ClassDiagram() {
 
             {/* Class Relationships */}
             <div className="mb-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                🔗 Class Relationships & Multiplicity
+              <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
+                <Link className="h-5 w-5 mr-2 text-slate-600" />
+                Class Relationships & Multiplicity
               </h3>
               <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
                 <div className="space-y-4 font-mono text-sm">
@@ -459,7 +474,8 @@ export default function ClassDiagram() {
             {/* Design Patterns Used */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                🏗️ Design Patterns Implemented
+                <Hammer className="h-5 w-5 mr-2 text-slate-600" />
+                Design Patterns Implemented
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-violet-50 border border-violet-200 rounded-lg p-4">
@@ -502,8 +518,9 @@ export default function ClassDiagram() {
             </div>
 
             <div className="bg-linear-to-r from-slate-100 to-slate-200 border border-slate-300 rounded-lg p-8 mt-12">
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                📋 Class Diagram Summary
+              <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
+                <ClipboardList className="h-5 w-5 mr-2 text-slate-600" />
+                Class Diagram Summary
               </h3>
               <p className="text-slate-700 mb-4">
                 This comprehensive class diagram represents the complete

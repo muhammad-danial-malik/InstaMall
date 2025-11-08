@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { ArrowLeft, Users } from "lucide-react";
+import { ArrowLeft, Users, Link, ClipboardList, Target } from "lucide-react";
 
 export default function UseCaseDiagram() {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-100">
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         {/* Header */}
         <div className="mb-8">
           <Button
@@ -19,15 +19,15 @@ export default function UseCaseDiagram() {
             Back to Dashboard
           </Button>
 
-          <div className="flex items-center mb-6">
-            <div className="w-16 h-16 bg-linear-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-              <Users className="h-8 w-8 text-white" />
+          <div className="flex flex-col sm:flex-row items-center sm:items-start mb-6">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-linear-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-lg">
+              <Users className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-slate-900 mb-2">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2">
                 Use Case Diagram
               </h1>
-              <p className="text-xl text-slate-600">
+              <p className="text-lg sm:text-xl text-slate-600">
                 UML representation of system interactions and user scenarios
               </p>
             </div>
@@ -47,9 +47,9 @@ export default function UseCaseDiagram() {
           </div>
 
           {/* UML Diagram Canvas */}
-          <div className="relative bg-slate-50 border-2 border-slate-200 rounded-lg p-8 min-h-[800px]">
+          <div className="relative bg-slate-50 border-2 border-slate-200 rounded-lg p-4 sm:p-6 lg:p-8 min-h-[600px] sm:min-h-[700px] lg:min-h-[800px] overflow-auto">
             {/* System Boundary */}
-            <div className="absolute inset-4 border-2 border-blue-400 rounded-lg bg-blue-50/20">
+            <div className="absolute inset-2 sm:inset-4 border-2 border-blue-400 rounded-lg bg-blue-50/20">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-white px-4">
                 <span className="text-blue-600 font-semibold">
                   Insta Mall System
@@ -59,7 +59,7 @@ export default function UseCaseDiagram() {
 
             {/* Actors */}
             {/* Shop Owner Actor */}
-            <div className="absolute top-20 left-8 flex flex-col items-center">
+            <div className="absolute top-16 sm:top-20 left-4 sm:left-8 flex flex-col items-center">
               <div className="flex flex-col items-center mb-2">
                 <div className="w-8 h-12 bg-slate-800 rounded-t-full relative">
                   <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-slate-600 rounded-full"></div>
@@ -74,7 +74,7 @@ export default function UseCaseDiagram() {
             </div>
 
             {/* Buyer Actor */}
-            <div className="absolute top-20 right-8 flex flex-col items-center">
+            <div className="absolute top-16 sm:top-20 right-4 sm:right-8 flex flex-col items-center">
               <div className="flex flex-col items-center mb-2">
                 <div className="w-8 h-12 bg-slate-800 rounded-t-full relative">
                   <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-slate-600 rounded-full"></div>
@@ -89,7 +89,7 @@ export default function UseCaseDiagram() {
             </div>
 
             {/* System Administrator Actor */}
-            <div className="absolute bottom-20 left-8 flex flex-col items-center">
+            <div className="absolute bottom-16 sm:bottom-20 left-4 sm:left-8 flex flex-col items-center">
               <div className="flex flex-col items-center mb-2">
                 <div className="w-8 h-12 bg-slate-800 rounded-t-full relative">
                   <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-slate-600 rounded-full"></div>
@@ -104,7 +104,8 @@ export default function UseCaseDiagram() {
             </div>
 
             {/* Payment Gateway Actor */}
-            <div className="absolute bottom-20 right-8 flex flex-col items-center">
+            {/* Delivery Partner Actor */}
+            <div className="absolute bottom-16 sm:bottom-20 right-4 sm:right-8 flex flex-col items-center">
               <div className="w-16 h-12 bg-orange-500 border-2 border-orange-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xs">PG</span>
               </div>
@@ -114,7 +115,7 @@ export default function UseCaseDiagram() {
             </div>
 
             {/* Shop Owner Use Cases */}
-            <div className="absolute top-32 left-32 space-y-4">
+            <div className="absolute top-24 sm:top-32 left-20 sm:left-32 space-y-3 sm:space-y-4">
               <div className="bg-blue-100 border-2 border-blue-400 rounded-full px-4 py-2 text-xs font-semibold text-blue-900 text-center min-w-[120px]">
                 Manage Inventory
               </div>
@@ -130,7 +131,7 @@ export default function UseCaseDiagram() {
             </div>
 
             {/* Buyer Use Cases */}
-            <div className="absolute top-32 right-32 space-y-4">
+            <div className="absolute top-24 sm:top-32 right-20 sm:right-32 space-y-3 sm:space-y-4">
               <div className="bg-green-100 border-2 border-green-400 rounded-full px-4 py-2 text-xs font-semibold text-green-900 text-center min-w-[120px]">
                 Search Products
               </div>
@@ -146,7 +147,7 @@ export default function UseCaseDiagram() {
             </div>
 
             {/* System Admin Use Cases */}
-            <div className="absolute bottom-32 left-32 space-y-4">
+            <div className="absolute bottom-24 sm:bottom-32 left-20 sm:left-32 space-y-3 sm:space-y-4">
               <div className="bg-purple-100 border-2 border-purple-400 rounded-full px-4 py-2 text-xs font-semibold text-purple-900 text-center min-w-[120px]">
                 Manage Users
               </div>
@@ -159,7 +160,8 @@ export default function UseCaseDiagram() {
             </div>
 
             {/* Payment Gateway Use Cases */}
-            <div className="absolute bottom-32 right-32 space-y-4">
+            {/* Delivery Partner Use Cases */}
+            <div className="absolute bottom-24 sm:bottom-32 right-20 sm:right-32 space-y-3 sm:space-y-4">
               <div className="bg-orange-100 border-2 border-orange-400 rounded-full px-4 py-2 text-xs font-semibold text-orange-900 text-center min-w-[120px]">
                 Process Payment
               </div>
@@ -527,8 +529,9 @@ export default function UseCaseDiagram() {
 
           {/* Relationship Types */}
           <div className="bg-white rounded-2xl shadow-xl p-6">
-            <h3 className="text-xl font-semibold text-slate-900 mb-4">
-              🔗 UML Relationship Types
+            <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
+              <Link className="h-5 w-5 mr-2 text-slate-600" />
+              UML Relationship Types
             </h3>
             <div className="space-y-4">
               <div className="flex items-start">
@@ -585,8 +588,9 @@ export default function UseCaseDiagram() {
 
         {/* Key Use Cases Table */}
         <div className="bg-white rounded-2xl shadow-xl p-6 mt-8">
-          <h3 className="text-xl font-semibold text-slate-900 mb-4">
-            📋 Detailed Use Case Specifications
+          <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
+            <ClipboardList className="h-5 w-5 mr-2 text-slate-600" />
+            Detailed Use Case Specifications
           </h3>
           <div className="overflow-x-auto">
             <table className="min-w-full border border-slate-200 rounded-lg">
@@ -685,8 +689,9 @@ export default function UseCaseDiagram() {
 
         {/* Summary */}
         <div className="bg-linear-to-r from-slate-100 to-slate-200 border border-slate-300 rounded-lg p-8 mt-8">
-          <h3 className="text-xl font-semibold text-slate-900 mb-4">
-            🎯 Use Case Diagram Summary
+          <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
+            <Target className="h-5 w-5 mr-2 text-slate-600" />
+            Use Case Diagram Summary
           </h3>
           <p className="text-slate-700 mb-4">
             This comprehensive UML use case diagram illustrates the complete

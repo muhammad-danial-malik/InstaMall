@@ -1,13 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { ArrowLeft, Zap } from "lucide-react";
+import {
+  ArrowLeft,
+  Zap,
+  ClipboardList,
+  Users,
+  Target,
+  Link,
+  CheckCircle,
+  RefreshCw,
+  BarChart3,
+} from "lucide-react";
 
 export default function RequirementEngineering() {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-100">
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <div className="mb-8">
           <Button
             variant="ghost"
@@ -16,15 +26,15 @@ export default function RequirementEngineering() {
           >
             <ArrowLeft className="h-4 w-4 mr-2" /> Back to Dashboard
           </Button>
-          <div className="flex items-center mb-6">
-            <div className="w-16 h-16 bg-linear-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
-              <Zap className="h-8 w-8 text-white" />
+          <div className="flex flex-col sm:flex-row items-center sm:items-start mb-6">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-linear-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-lg">
+              <Zap className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold text-slate-900 mb-2">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-2">
                 Requirements Engineering
               </h1>
-              <p className="text-xl text-slate-600">
+              <p className="text-lg sm:text-xl text-slate-600">
                 Comprehensive requirements specification for Insta Mall system
               </p>
             </div>
@@ -46,7 +56,8 @@ export default function RequirementEngineering() {
             {/* Functional Requirements */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                📋 Functional Requirements
+                <ClipboardList className="h-5 w-5 mr-2 text-slate-600" />
+                Functional Requirements
               </h3>
 
               {/* Shop Owner Requirements */}
@@ -252,7 +263,8 @@ export default function RequirementEngineering() {
             {/* Non-Functional Requirements */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                ⚡ Non-Functional Requirements
+                <Zap className="h-5 w-5 mr-2 text-slate-600" />
+                Non-Functional Requirements
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
@@ -310,7 +322,8 @@ export default function RequirementEngineering() {
             {/* User Stories */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                👥 User Stories
+                <Users className="h-5 w-5 mr-2 text-slate-600" />
+                User Stories
               </h3>
               <div className="space-y-4">
                 <div className="bg-linear-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4">
@@ -404,7 +417,8 @@ export default function RequirementEngineering() {
             {/* Use Cases */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                🎯 Use Cases
+                <Target className="h-5 w-5 mr-2 text-slate-600" />
+                Use Cases
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white border-2 border-slate-200 rounded-lg p-6">
@@ -540,7 +554,8 @@ export default function RequirementEngineering() {
             {/* Requirements Traceability Matrix */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                🔗 Requirements Traceability Matrix
+                <Link className="h-5 w-5 mr-2 text-slate-600" />
+                Requirements Traceability Matrix
               </h3>
               <div className="overflow-x-auto">
                 <table className="min-w-full bg-white border border-slate-200 rounded-lg">
@@ -641,7 +656,8 @@ export default function RequirementEngineering() {
             {/* Acceptance Criteria */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
-                ✅ Acceptance Criteria
+                <CheckCircle className="h-5 w-5 mr-2 text-slate-600" />
+                Acceptance Criteria
               </h3>
               <div className="space-y-4">
                 <div className="bg-linear-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-lg p-4">
@@ -650,13 +666,35 @@ export default function RequirementEngineering() {
                   </h4>
                   <ul className="text-emerald-800 text-sm space-y-1">
                     <li>
-                      • ✅ Offline inventory management with local database
+                      •{" "}
+                      <CheckCircle className="h-3 w-3 inline mr-1 text-green-600" />{" "}
+                      Offline inventory management with local database
                     </li>
-                    <li>• ✅ Basic product CRUD operations</li>
-                    <li>• ✅ Cloud synchronization when online</li>
-                    <li>• ✅ Simple buyer app with shop listing</li>
-                    <li>• ✅ Subscription-based shop visibility</li>
-                    <li>• ✅ Monthly billing integration</li>
+                    <li>
+                      •{" "}
+                      <CheckCircle className="h-3 w-3 inline mr-1 text-green-600" />{" "}
+                      Basic product CRUD operations
+                    </li>
+                    <li>
+                      •{" "}
+                      <CheckCircle className="h-3 w-3 inline mr-1 text-green-600" />{" "}
+                      Cloud synchronization when online
+                    </li>
+                    <li>
+                      •{" "}
+                      <CheckCircle className="h-3 w-3 inline mr-1 text-green-600" />{" "}
+                      Simple buyer app with shop listing
+                    </li>
+                    <li>
+                      •{" "}
+                      <CheckCircle className="h-3 w-3 inline mr-1 text-green-600" />{" "}
+                      Subscription-based shop visibility
+                    </li>
+                    <li>
+                      •{" "}
+                      <CheckCircle className="h-3 w-3 inline mr-1 text-green-600" />{" "}
+                      Monthly billing integration
+                    </li>
                   </ul>
                 </div>
 
@@ -665,12 +703,36 @@ export default function RequirementEngineering() {
                     Phase 2 Enhancement Criteria
                   </h4>
                   <ul className="text-cyan-800 text-sm space-y-1">
-                    <li>• 🔄 Advanced search with filters and sorting</li>
-                    <li>• 🔄 Barcode/QR scanning integration</li>
-                    <li>• 🔄 Low stock alerts and reorder suggestions</li>
-                    <li>• 🔄 Product image uploads and compression</li>
-                    <li>• 🔄 Customer reviews and ratings</li>
-                    <li>• 🔄 Analytics dashboard for shop owners</li>
+                    <li>
+                      •{" "}
+                      <RefreshCw className="h-3 w-3 inline mr-1 text-blue-600" />{" "}
+                      Advanced search with filters and sorting
+                    </li>
+                    <li>
+                      •{" "}
+                      <RefreshCw className="h-3 w-3 inline mr-1 text-blue-600" />{" "}
+                      Barcode/QR scanning integration
+                    </li>
+                    <li>
+                      •{" "}
+                      <RefreshCw className="h-3 w-3 inline mr-1 text-blue-600" />{" "}
+                      Low stock alerts and reorder suggestions
+                    </li>
+                    <li>
+                      •{" "}
+                      <RefreshCw className="h-3 w-3 inline mr-1 text-blue-600" />{" "}
+                      Product image uploads and compression
+                    </li>
+                    <li>
+                      •{" "}
+                      <RefreshCw className="h-3 w-3 inline mr-1 text-blue-600" />{" "}
+                      Customer reviews and ratings
+                    </li>
+                    <li>
+                      •{" "}
+                      <RefreshCw className="h-3 w-3 inline mr-1 text-blue-600" />{" "}
+                      Analytics dashboard for shop owners
+                    </li>
                   </ul>
                 </div>
 
@@ -679,22 +741,32 @@ export default function RequirementEngineering() {
                     Quality Assurance Criteria
                   </h4>
                   <ul className="text-violet-800 text-sm space-y-1">
-                    <li>• 📊 95% test coverage for critical paths</li>
                     <li>
-                      • 📊 Performance benchmarks met (startup &lt; 5s, search
-                      &lt; 2s)
+                      •{" "}
+                      <BarChart3 className="h-3 w-3 inline mr-1 text-purple-600" />{" "}
+                      95% test coverage for critical paths
                     </li>
                     <li>
-                      • 📊 Security audit passed with no critical
-                      vulnerabilities
+                      •{" "}
+                      <BarChart3 className="h-3 w-3 inline mr-1 text-purple-600" />{" "}
+                      Performance benchmarks met (startup &lt; 5s, search &lt;
+                      2s)
                     </li>
                     <li>
-                      • 📊 User acceptance testing completed with 90%
-                      satisfaction
+                      •{" "}
+                      <BarChart3 className="h-3 w-3 inline mr-1 text-purple-600" />{" "}
+                      Security audit passed with no critical vulnerabilities
                     </li>
                     <li>
-                      • 📊 Offline functionality verified across different
-                      network conditions
+                      •{" "}
+                      <BarChart3 className="h-3 w-3 inline mr-1 text-purple-600" />{" "}
+                      User acceptance testing completed with 90% satisfaction
+                    </li>
+                    <li>
+                      •{" "}
+                      <BarChart3 className="h-3 w-3 inline mr-1 text-purple-600" />{" "}
+                      Offline functionality verified across different network
+                      conditions
                     </li>
                   </ul>
                 </div>
@@ -702,8 +774,9 @@ export default function RequirementEngineering() {
             </div>
 
             <div className="bg-linear-to-r from-slate-100 to-slate-200 border border-slate-300 rounded-lg p-8 mt-12">
-              <h3 className="text-xl font-semibold text-slate-900 mb-4">
-                📊 Requirements Engineering Summary
+              <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center">
+                <BarChart3 className="h-5 w-5 mr-2 text-slate-600" />
+                Requirements Engineering Summary
               </h3>
               <p className="text-slate-700 mb-4">
                 This comprehensive requirements specification provides the
