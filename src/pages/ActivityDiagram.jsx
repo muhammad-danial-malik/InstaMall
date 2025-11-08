@@ -34,12 +34,23 @@ export default function ActivityDiagram() {
         <div className="space-y-8">
           {/* Customer Purchase Flow */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
-              <span className="w-3 h-3 bg-rose-500 rounded-full mr-3"></span>
-              Customer Purchase Flow
-            </h2>
-            <div className="bg-slate-50 rounded-lg p-6">
-              <svg viewBox="0 0 800 600" className="w-full h-auto">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-slate-900 mb-2 flex items-center">
+                <span className="w-3 h-3 bg-rose-500 rounded-full mr-3"></span>
+                Customer Purchase Flow
+              </h2>
+              <p className="text-slate-600 text-sm">
+                Activity flow showing customer journey from browsing products to
+                checkout
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-6 overflow-x-auto border-2 border-rose-200">
+              <svg
+                viewBox="0 0 900 700"
+                className="w-full min-w-max h-auto"
+                preserveAspectRatio="xMidYMid meet"
+                style={{ minHeight: "550px" }}
+              >
                 <defs>
                   <marker
                     id="arrowhead"
@@ -518,12 +529,23 @@ export default function ActivityDiagram() {
 
           {/* Order Processing Flow */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
-              <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-              Order Processing Flow
-            </h2>
-            <div className="bg-slate-50 rounded-lg p-6">
-              <svg viewBox="0 0 800 500" className="w-full h-auto">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-slate-900 mb-2 flex items-center">
+                <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                Order Processing Flow
+              </h2>
+              <p className="text-slate-600 text-sm">
+                Activity flow showing order creation, validation, and payment
+                processing
+              </p>
+            </div>
+            <div className="bg-slate-50 rounded-lg p-6 overflow-x-auto border-2 border-blue-200">
+              <svg
+                viewBox="0 0 900 600"
+                className="w-full min-w-max h-auto"
+                preserveAspectRatio="xMidYMid meet"
+                style={{ minHeight: "500px" }}
+              >
                 <defs>
                   <marker
                     id="arrowhead-blue"
@@ -1049,32 +1071,90 @@ export default function ActivityDiagram() {
 
           {/* Summary Metrics */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
-              Activity Diagram Summary
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-rose-50 border border-rose-200 rounded-lg p-4">
-                <h3 className="font-semibold text-rose-900 mb-2">
-                  Customer Flow
-                </h3>
-                <p className="text-rose-800 text-sm">
-                  6 main activities, 2 decision points, 3 possible paths
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-slate-900 mb-2">
+                Activity Diagram Summary & Key Components
+              </h2>
+              <p className="text-slate-600 text-sm">
+                Overview of activities, decisions, and flow paths across both
+                diagrams
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-rose-50 border-2 border-rose-200 rounded-lg p-6">
+                <div className="flex items-start">
+                  <div className="w-10 h-10 bg-rose-500 rounded-lg flex items-center justify-center shrink-0 mr-4">
+                    <span className="text-white font-bold">1</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-rose-900 mb-2">
+                      Customer Purchase Flow
+                    </h3>
+                    <p className="text-rose-800 text-sm mb-3">
+                      Complete customer journey from browsing to payment
+                    </p>
+                    <ul className="text-rose-700 text-xs space-y-1">
+                      <li>✓ 6 main activities</li>
+                      <li>✓ 2 decision points</li>
+                      <li>✓ 3 possible paths (continue shopping loop)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
+                <div className="flex items-start">
+                  <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center shrink-0 mr-4">
+                    <span className="text-white font-bold">2</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-blue-900 mb-2">
+                      Order Processing Flow
+                    </h3>
+                    <p className="text-blue-800 text-sm mb-3">
+                      Backend order processing and payment handling
+                    </p>
+                    <ul className="text-blue-700 text-xs space-y-1">
+                      <li>✓ 7 activities</li>
+                      <li>✓ 3 decision points</li>
+                      <li>✓ Parallel processing paths</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Components Section */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="bg-slate-100 rounded-lg p-4 border-l-4 border-amber-500">
+                <h4 className="font-semibold text-slate-900 mb-2 text-sm">
+                  Activities
+                </h4>
+                <p className="text-slate-700 text-xs">
+                  Rounded rectangles representing individual tasks or processes
                 </p>
               </div>
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <h3 className="font-semibold text-blue-900 mb-2">
-                  Order Processing
-                </h3>
-                <p className="text-blue-800 text-sm">
-                  7 activities, 3 decision points, parallel processing
+              <div className="bg-slate-100 rounded-lg p-4 border-l-4 border-rose-500">
+                <h4 className="font-semibold text-slate-900 mb-2 text-sm">
+                  Decisions
+                </h4>
+                <p className="text-slate-700 text-xs">
+                  Diamond shapes with conditional branching logic
                 </p>
               </div>
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <h3 className="font-semibold text-green-900 mb-2">
-                  Success Metrics
-                </h3>
-                <p className="text-green-800 text-sm">
-                  95% successful payments, 98% on-time delivery
+              <div className="bg-slate-100 rounded-lg p-4 border-l-4 border-blue-500">
+                <h4 className="font-semibold text-slate-900 mb-2 text-sm">
+                  Control Flow
+                </h4>
+                <p className="text-slate-700 text-xs">
+                  Directed arrows showing sequence and transitions
+                </p>
+              </div>
+              <div className="bg-slate-100 rounded-lg p-4 border-l-4 border-green-500">
+                <h4 className="font-semibold text-slate-900 mb-2 text-sm">
+                  End States
+                </h4>
+                <p className="text-slate-700 text-xs">
+                  Filled circles indicating final outcomes or completion
                 </p>
               </div>
             </div>

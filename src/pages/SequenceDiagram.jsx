@@ -51,304 +51,354 @@ export default function SequenceDiagram() {
             </p>
           </div>
 
-          <div className="relative bg-slate-50 border-2 border-slate-200 rounded-lg p-6 min-h-[600px]">
-            {/* Lifelines */}
-            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 flex justify-between w-full max-w-4xl">
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-blue-500 border-2 border-blue-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">
-                    Shop Owner
-                  </span>
-                </div>
-                <div className="w-0.5 h-[500px] bg-slate-400"></div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-green-500 border-2 border-green-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">Web App</span>
-                </div>
-                <div className="w-0.5 h-[500px] bg-slate-400"></div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-purple-500 border-2 border-purple-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">
-                    API Server
-                  </span>
-                </div>
-                <div className="w-0.5 h-[500px] bg-slate-400"></div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-orange-500 border-2 border-orange-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">Database</span>
-                </div>
-                <div className="w-0.5 h-[500px] bg-slate-400"></div>
-              </div>
-            </div>
+          {/* Responsive SVG Sequence Diagram */}
+          <div className="w-full overflow-x-auto bg-slate-50 border-2 border-slate-200 rounded-lg">
+            <svg
+              viewBox="0 0 1400 500"
+              className="w-full min-w-max h-auto"
+              preserveAspectRatio="xMidYMid meet"
+              style={{ minHeight: "450px" }}
+            >
+              <defs>
+                <marker
+                  id="seq-arrow"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="9"
+                  refY="3"
+                  orient="auto"
+                  markerUnits="strokeWidth"
+                >
+                  <path d="M0,0 L0,6 L9,3 z" fill="#1f2937" />
+                </marker>
+              </defs>
 
-            {/* Sequence Messages */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none">
-              {/* Message 1: Access Registration */}
-              <line
-                x1="120"
-                y1="120"
-                x2="280"
-                y2="120"
-                stroke="#3B82F6"
+              {/* Background */}
+              <rect width="1400" height="500" fill="#f8fafc" />
+
+              {/* Actor Headers */}
+              <rect
+                x="80"
+                y="20"
+                width="140"
+                height="50"
+                fill="#3b82f6"
+                stroke="#1e40af"
                 strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
+                rx="4"
               />
               <text
-                x="200"
-                y="115"
+                x="150"
+                y="50"
                 textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
+                className="fill-white font-bold text-sm"
+              >
+                Shop Owner
+              </text>
+
+              <rect
+                x="320"
+                y="20"
+                width="140"
+                height="50"
+                fill="#10b981"
+                stroke="#047857"
+                strokeWidth="2"
+                rx="4"
+              />
+              <text
+                x="390"
+                y="50"
+                textAnchor="middle"
+                className="fill-white font-bold text-sm"
+              >
+                Web App
+              </text>
+
+              <rect
+                x="560"
+                y="20"
+                width="140"
+                height="50"
+                fill="#8b5cf6"
+                stroke="#6d28d9"
+                strokeWidth="2"
+                rx="4"
+              />
+              <text
+                x="630"
+                y="50"
+                textAnchor="middle"
+                className="fill-white font-bold text-sm"
+              >
+                API Server
+              </text>
+
+              <rect
+                x="800"
+                y="20"
+                width="140"
+                height="50"
+                fill="#f97316"
+                stroke="#c2410c"
+                strokeWidth="2"
+                rx="4"
+              />
+              <text
+                x="870"
+                y="50"
+                textAnchor="middle"
+                className="fill-white font-bold text-sm"
+              >
+                Database
+              </text>
+
+              {/* Lifelines */}
+              <line
+                x1="150"
+                y1="70"
+                x2="150"
+                y2="480"
+                stroke="#cbd5e1"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+              />
+              <line
+                x1="390"
+                y1="70"
+                x2="390"
+                y2="480"
+                stroke="#cbd5e1"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+              />
+              <line
+                x1="630"
+                y1="70"
+                x2="630"
+                y2="480"
+                stroke="#cbd5e1"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+              />
+              <line
+                x1="870"
+                y1="70"
+                x2="870"
+                y2="480"
+                stroke="#cbd5e1"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+              />
+
+              {/* Sequence Messages */}
+              <line
+                x1="150"
+                y1="100"
+                x2="390"
+                y2="100"
+                stroke="#3b82f6"
+                strokeWidth="2.5"
+                markerEnd="url(#seq-arrow)"
+              />
+              <text
+                x="270"
+                y="90"
+                textAnchor="middle"
+                className="fill-blue-700 text-xs font-semibold"
               >
                 1. accessRegistration()
               </text>
 
-              {/* Message 2: Show Registration Form */}
               <line
-                x1="280"
-                y1="140"
-                x2="120"
-                y2="140"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
+                x1="390"
+                y1="130"
+                x2="150"
+                y2="130"
+                stroke="#10b981"
+                strokeWidth="2.5"
+                markerEnd="url(#seq-arrow)"
               />
               <text
-                x="200"
-                y="135"
+                x="270"
+                y="120"
                 textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
+                className="fill-green-700 text-xs font-semibold"
               >
                 2. displayForm()
               </text>
 
-              {/* Message 3: Submit Registration */}
               <line
-                x1="120"
+                x1="150"
                 y1="160"
-                x2="280"
+                x2="390"
                 y2="160"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
+                stroke="#3b82f6"
+                strokeWidth="2.5"
+                markerEnd="url(#seq-arrow)"
               />
               <text
-                x="200"
-                y="155"
+                x="270"
+                y="150"
                 textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
+                className="fill-blue-700 text-xs font-semibold"
               >
                 3. submitRegistration(data)
               </text>
 
-              {/* Message 4: Validate Data */}
               <line
-                x1="280"
-                y1="180"
-                x2="360"
-                y2="180"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
+                x1="390"
+                y1="190"
+                x2="630"
+                y2="190"
+                stroke="#10b981"
+                strokeWidth="2.5"
+                markerEnd="url(#seq-arrow)"
               />
               <text
-                x="320"
-                y="175"
+                x="510"
+                y="180"
                 textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
+                className="fill-green-700 text-xs font-semibold"
               >
                 4. validateShopData()
               </text>
 
-              {/* Message 5: Create Shop */}
               <line
-                x1="360"
-                y1="200"
-                x2="440"
-                y2="200"
-                stroke="#8B5CF6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-purple)"
+                x1="630"
+                y1="220"
+                x2="870"
+                y2="220"
+                stroke="#8b5cf6"
+                strokeWidth="2.5"
+                markerEnd="url(#seq-arrow)"
               />
               <text
-                x="400"
-                y="195"
+                x="750"
+                y="210"
                 textAnchor="middle"
-                className="text-xs fill-purple-600 font-medium"
+                className="fill-purple-700 text-xs font-semibold"
               >
                 5. createShop()
               </text>
 
-              {/* Message 6: Store Shop Data */}
               <line
-                x1="440"
-                y1="220"
-                x2="360"
-                y2="220"
-                stroke="#F97316"
-                strokeWidth="2"
-                markerEnd="url(#arrow-orange)"
+                x1="870"
+                y1="250"
+                x2="630"
+                y2="250"
+                stroke="#f97316"
+                strokeWidth="2.5"
+                markerEnd="url(#seq-arrow)"
               />
               <text
-                x="400"
-                y="215"
+                x="750"
+                y="240"
                 textAnchor="middle"
-                className="text-xs fill-orange-600 font-medium"
+                className="fill-orange-700 text-xs font-semibold"
               >
                 6. insertShopRecord()
               </text>
 
-              {/* Message 7: Generate Subscription */}
               <line
-                x1="360"
-                y1="240"
-                x2="440"
-                y2="240"
-                stroke="#8B5CF6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-purple)"
+                x1="630"
+                y1="280"
+                x2="870"
+                y2="280"
+                stroke="#8b5cf6"
+                strokeWidth="2.5"
+                markerEnd="url(#seq-arrow)"
               />
               <text
-                x="400"
-                y="235"
+                x="750"
+                y="270"
                 textAnchor="middle"
-                className="text-xs fill-purple-600 font-medium"
+                className="fill-purple-700 text-xs font-semibold"
               >
                 7. createSubscription()
               </text>
 
-              {/* Message 8: Store Subscription */}
               <line
-                x1="440"
-                y1="260"
-                x2="360"
-                y2="260"
-                stroke="#F97316"
-                strokeWidth="2"
-                markerEnd="url(#arrow-orange)"
+                x1="870"
+                y1="310"
+                x2="630"
+                y2="310"
+                stroke="#f97316"
+                strokeWidth="2.5"
+                markerEnd="url(#seq-arrow)"
               />
               <text
-                x="400"
-                y="255"
+                x="750"
+                y="300"
                 textAnchor="middle"
-                className="text-xs fill-orange-600 font-medium"
+                className="fill-orange-700 text-xs font-semibold"
               >
                 8. insertSubscription()
               </text>
 
-              {/* Message 9: Send Confirmation */}
               <line
-                x1="360"
-                y1="280"
-                x2="280"
-                y2="280"
-                stroke="#8B5CF6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-purple)"
+                x1="630"
+                y1="340"
+                x2="390"
+                y2="340"
+                stroke="#8b5cf6"
+                strokeWidth="2.5"
+                markerEnd="url(#seq-arrow)"
               />
               <text
-                x="320"
-                y="275"
+                x="510"
+                y="330"
                 textAnchor="middle"
-                className="text-xs fill-purple-600 font-medium"
+                className="fill-purple-700 text-xs font-semibold"
               >
                 9. sendConfirmation()
               </text>
 
-              {/* Message 10: Show Success */}
               <line
-                x1="280"
-                y1="300"
-                x2="120"
-                y2="300"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
+                x1="390"
+                y1="370"
+                x2="150"
+                y2="370"
+                stroke="#10b981"
+                strokeWidth="2.5"
+                markerEnd="url(#seq-arrow)"
               />
               <text
-                x="200"
-                y="295"
+                x="270"
+                y="360"
                 textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
+                className="fill-green-700 text-xs font-semibold"
               >
                 10. displaySuccess()
               </text>
 
-              {/* Activation bars */}
+              {/* Note boxes */}
               <rect
-                x="275"
-                y="120"
-                width="10"
-                height="20"
-                fill="#10B981"
-                opacity="0.3"
-              />
-              <rect
-                x="355"
-                y="180"
-                width="10"
-                height="120"
-                fill="#8B5CF6"
-                opacity="0.3"
-              />
-              <rect
-                x="435"
-                y="200"
-                width="10"
+                x="950"
+                y="100"
+                width="220"
                 height="80"
-                fill="#F97316"
-                opacity="0.3"
+                fill="#fef3c7"
+                stroke="#d97706"
+                strokeWidth="1.5"
+                rx="4"
               />
-
-              {/* Arrow markers */}
-              <defs>
-                <marker
-                  id="arrow-blue"
-                  markerWidth="10"
-                  markerHeight="10"
-                  refX="9"
-                  refY="3"
-                  orient="auto"
-                  markerUnits="strokeWidth"
-                >
-                  <path d="M0,0 L0,6 L9,3 z" fill="#3B82F6" />
-                </marker>
-                <marker
-                  id="arrow-green"
-                  markerWidth="10"
-                  markerHeight="10"
-                  refX="9"
-                  refY="3"
-                  orient="auto"
-                  markerUnits="strokeWidth"
-                >
-                  <path d="M0,0 L0,6 L9,3 z" fill="#10B981" />
-                </marker>
-                <marker
-                  id="arrow-purple"
-                  markerWidth="10"
-                  markerHeight="10"
-                  refX="9"
-                  refY="3"
-                  orient="auto"
-                  markerUnits="strokeWidth"
-                >
-                  <path d="M0,0 L0,6 L9,3 z" fill="#8B5CF6" />
-                </marker>
-                <marker
-                  id="arrow-orange"
-                  markerWidth="10"
-                  markerHeight="10"
-                  refX="9"
-                  refY="3"
-                  orient="auto"
-                  markerUnits="strokeWidth"
-                >
-                  <path d="M0,0 L0,6 L9,3 z" fill="#F97316" />
-                </marker>
-              </defs>
+              <text
+                x="960"
+                y="120"
+                className="fill-amber-900 text-xs font-semibold"
+              >
+                Activation Sequence:
+              </text>
+              <text x="960" y="135" className="fill-amber-900 text-xs">
+                1. Shop Owner initiates registration
+              </text>
+              <text x="960" y="150" className="fill-amber-900 text-xs">
+                2. System validates data
+              </text>
+              <text x="960" y="165" className="fill-amber-900 text-xs">
+                3. Database stores records
+              </text>
             </svg>
           </div>
         </div>
@@ -365,383 +415,16 @@ export default function SequenceDiagram() {
             </p>
           </div>
 
-          <div className="relative bg-slate-50 border-2 border-slate-200 rounded-lg p-6 min-h-[700px]">
-            {/* Lifelines */}
-            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 flex justify-between w-full max-w-5xl">
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-green-500 border-2 border-green-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">
-                    Buyer App
-                  </span>
-                </div>
-                <div className="w-0.5 h-[600px] bg-slate-400"></div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-blue-500 border-2 border-blue-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">
-                    API Server
-                  </span>
-                </div>
-                <div className="w-0.5 h-[600px] bg-slate-400"></div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-purple-500 border-2 border-purple-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">Database</span>
-                </div>
-                <div className="w-0.5 h-[600px] bg-slate-400"></div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-orange-500 border-2 border-orange-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">
-                    Payment GW
-                  </span>
-                </div>
-                <div className="w-0.5 h-[600px] bg-slate-400"></div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-red-500 border-2 border-red-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">Shop App</span>
-                </div>
-                <div className="w-0.5 h-[600px] bg-slate-400"></div>
-              </div>
-            </div>
-
-            {/* Sequence Messages */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none">
-              {/* Message 1: Search Products */}
-              <line
-                x1="80"
-                y1="120"
-                x2="200"
-                y2="120"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
-              />
-              <text
-                x="140"
-                y="115"
-                textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
-              >
-                1. searchProducts(query)
-              </text>
-
-              {/* Message 2: Query Database */}
-              <line
-                x1="200"
-                y1="140"
-                x2="320"
-                y2="140"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="260"
-                y="135"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                2. findSubscribedShops()
-              </text>
-
-              {/* Message 3: Return Results */}
-              <line
-                x1="320"
-                y1="160"
-                x2="200"
-                y2="160"
-                stroke="#8B5CF6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-purple)"
-              />
-              <text
-                x="260"
-                y="155"
-                textAnchor="middle"
-                className="text-xs fill-purple-600 font-medium"
-              >
-                3. returnShopList()
-              </text>
-
-              {/* Message 4: Display Results */}
-              <line
-                x1="200"
-                y1="180"
-                x2="80"
-                y2="180"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="140"
-                y="175"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                4. showSearchResults()
-              </text>
-
-              {/* Message 5: Select Shop */}
-              <line
-                x1="80"
-                y1="200"
-                x2="200"
-                y2="200"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
-              />
-              <text
-                x="140"
-                y="195"
-                textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
-              >
-                5. viewShopDetails(shopId)
-              </text>
-
-              {/* Message 6: Get Shop Data */}
-              <line
-                x1="200"
-                y1="220"
-                x2="320"
-                y2="220"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="260"
-                y="215"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                6. getShopWithProducts()
-              </text>
-
-              {/* Message 7: Return Shop Data */}
-              <line
-                x1="320"
-                y1="240"
-                x2="200"
-                y2="240"
-                stroke="#8B5CF6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-purple)"
-              />
-              <text
-                x="260"
-                y="235"
-                textAnchor="middle"
-                className="text-xs fill-purple-600 font-medium"
-              >
-                7. returnShopData()
-              </text>
-
-              {/* Message 8: Display Shop */}
-              <line
-                x1="200"
-                y1="260"
-                x2="80"
-                y2="260"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="140"
-                y="255"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                8. renderShopPage()
-              </text>
-
-              {/* Message 9: Add to Cart */}
-              <line
-                x1="80"
-                y1="280"
-                x2="200"
-                y2="280"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
-              />
-              <text
-                x="140"
-                y="275"
-                textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
-              >
-                9. addToCart(productId, qty)
-              </text>
-
-              {/* Message 10: Checkout */}
-              <line
-                x1="80"
-                y1="300"
-                x2="200"
-                y2="300"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
-              />
-              <text
-                x="140"
-                y="295"
-                textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
-              >
-                10. initiateCheckout()
-              </text>
-
-              {/* Message 11: Create Order */}
-              <line
-                x1="200"
-                y1="320"
-                x2="320"
-                y2="320"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="260"
-                y="315"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                11. createOrder(cartData)
-              </text>
-
-              {/* Message 12: Process Payment */}
-              <line
-                x1="200"
-                y1="340"
-                x2="400"
-                y2="340"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="300"
-                y="335"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                12. processPayment(amount)
-              </text>
-
-              {/* Message 13: Payment Success */}
-              <line
-                x1="400"
-                y1="360"
-                x2="200"
-                y2="360"
-                stroke="#F97316"
-                strokeWidth="2"
-                markerEnd="url(#arrow-orange)"
-              />
-              <text
-                x="300"
-                y="355"
-                textAnchor="middle"
-                className="text-xs fill-orange-600 font-medium"
-              >
-                13. paymentConfirmed()
-              </text>
-
-              {/* Message 14: Update Inventory */}
-              <line
-                x1="200"
-                y1="380"
-                x2="320"
-                y2="380"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="260"
-                y="375"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                14. updateStockLevels()
-              </text>
-
-              {/* Message 15: Notify Shop */}
-              <line
-                x1="200"
-                y1="400"
-                x2="480"
-                y2="400"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="340"
-                y="395"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                15. sendOrderNotification()
-              </text>
-
-              {/* Message 16: Show Confirmation */}
-              <line
-                x1="200"
-                y1="420"
-                x2="80"
-                y2="420"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="140"
-                y="415"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                16. displayOrderConfirmation()
-              </text>
-
-              {/* Activation bars */}
-              <rect
-                x="195"
-                y="120"
-                width="10"
-                height="320"
-                fill="#3B82F6"
-                opacity="0.3"
-              />
-              <rect
-                x="315"
-                y="140"
-                width="10"
-                height="120"
-                fill="#8B5CF6"
-                opacity="0.3"
-              />
-              <rect
-                x="395"
-                y="340"
-                width="10"
-                height="40"
-                fill="#F97316"
-                opacity="0.3"
-              />
-
-              {/* Arrow markers */}
+          <div className="bg-slate-50 border-2 border-slate-200 rounded-lg p-6 overflow-x-auto">
+            <svg
+              viewBox="0 0 1600 650"
+              className="w-full min-w-max h-auto"
+              preserveAspectRatio="xMidYMid meet"
+              style={{ minHeight: "500px" }}
+            >
               <defs>
                 <marker
-                  id="arrow-green"
+                  id="seq2-arrow-green"
                   markerWidth="10"
                   markerHeight="10"
                   refX="9"
@@ -752,7 +435,7 @@ export default function SequenceDiagram() {
                   <path d="M0,0 L0,6 L9,3 z" fill="#10B981" />
                 </marker>
                 <marker
-                  id="arrow-blue"
+                  id="seq2-arrow-blue"
                   markerWidth="10"
                   markerHeight="10"
                   refX="9"
@@ -763,7 +446,7 @@ export default function SequenceDiagram() {
                   <path d="M0,0 L0,6 L9,3 z" fill="#3B82F6" />
                 </marker>
                 <marker
-                  id="arrow-purple"
+                  id="seq2-arrow-purple"
                   markerWidth="10"
                   markerHeight="10"
                   refX="9"
@@ -774,7 +457,7 @@ export default function SequenceDiagram() {
                   <path d="M0,0 L0,6 L9,3 z" fill="#8B5CF6" />
                 </marker>
                 <marker
-                  id="arrow-orange"
+                  id="seq2-arrow-orange"
                   markerWidth="10"
                   markerHeight="10"
                   refX="9"
@@ -784,7 +467,427 @@ export default function SequenceDiagram() {
                 >
                   <path d="M0,0 L0,6 L9,3 z" fill="#F97316" />
                 </marker>
+                <marker
+                  id="seq2-arrow-red"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="9"
+                  refY="3"
+                  orient="auto"
+                  markerUnits="strokeWidth"
+                >
+                  <path d="M0,0 L0,6 L9,3 z" fill="#EF4444" />
+                </marker>
               </defs>
+
+              {/* Actor headers */}
+              <g id="seq2-actor-headers">
+                <rect
+                  x="80"
+                  y="20"
+                  width="100"
+                  height="40"
+                  fill="#10B981"
+                  rx="4"
+                />
+                <text
+                  x="130"
+                  y="45"
+                  textAnchor="middle"
+                  className="fill-white text-sm font-bold"
+                >
+                  Buyer App
+                </text>
+
+                <rect
+                  x="300"
+                  y="20"
+                  width="100"
+                  height="40"
+                  fill="#3B82F6"
+                  rx="4"
+                />
+                <text
+                  x="350"
+                  y="45"
+                  textAnchor="middle"
+                  className="fill-white text-sm font-bold"
+                >
+                  API Server
+                </text>
+
+                <rect
+                  x="520"
+                  y="20"
+                  width="100"
+                  height="40"
+                  fill="#8B5CF6"
+                  rx="4"
+                />
+                <text
+                  x="570"
+                  y="45"
+                  textAnchor="middle"
+                  className="fill-white text-sm font-bold"
+                >
+                  Database
+                </text>
+
+                <rect
+                  x="740"
+                  y="20"
+                  width="100"
+                  height="40"
+                  fill="#F97316"
+                  rx="4"
+                />
+                <text
+                  x="790"
+                  y="45"
+                  textAnchor="middle"
+                  className="fill-white text-sm font-bold"
+                >
+                  Payment GW
+                </text>
+
+                <rect
+                  x="960"
+                  y="20"
+                  width="100"
+                  height="40"
+                  fill="#EF4444"
+                  rx="4"
+                />
+                <text
+                  x="1010"
+                  y="45"
+                  textAnchor="middle"
+                  className="fill-white text-sm font-bold"
+                >
+                  Shop App
+                </text>
+              </g>
+
+              {/* Lifelines (dashed vertical lines) */}
+              <g
+                id="seq2-lifelines"
+                stroke="#9CA3AF"
+                strokeDasharray="5,5"
+                strokeWidth="1.5"
+              >
+                <line x1="130" y1="60" x2="130" y2="620" />
+                <line x1="350" y1="60" x2="350" y2="620" />
+                <line x1="570" y1="60" x2="570" y2="620" />
+                <line x1="790" y1="60" x2="790" y2="620" />
+                <line x1="1010" y1="60" x2="1010" y2="620" />
+              </g>
+
+              {/* Sequence Messages */}
+              {/* 1. searchProducts */}
+              <path
+                d="M 130 100 Q 240 90 350 100"
+                stroke="#10B981"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-green)"
+              />
+              <text
+                x="240"
+                y="85"
+                textAnchor="middle"
+                className="fill-green-600 text-xs font-medium"
+              >
+                1. searchProducts(query)
+              </text>
+
+              {/* 2. findSubscribedShops */}
+              <path
+                d="M 350 130 Q 460 120 570 130"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-blue)"
+              />
+              <text
+                x="460"
+                y="115"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                2. findSubscribedShops()
+              </text>
+
+              {/* 3. returnShopList */}
+              <path
+                d="M 570 160 Q 460 150 350 160"
+                stroke="#8B5CF6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-purple)"
+              />
+              <text
+                x="460"
+                y="145"
+                textAnchor="middle"
+                className="fill-purple-600 text-xs font-medium"
+              >
+                3. returnShopList()
+              </text>
+
+              {/* 4. showSearchResults */}
+              <path
+                d="M 350 190 Q 240 180 130 190"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-blue)"
+              />
+              <text
+                x="240"
+                y="175"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                4. showSearchResults()
+              </text>
+
+              {/* 5. viewShopDetails */}
+              <path
+                d="M 130 220 Q 240 210 350 220"
+                stroke="#10B981"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-green)"
+              />
+              <text
+                x="240"
+                y="205"
+                textAnchor="middle"
+                className="fill-green-600 text-xs font-medium"
+              >
+                5. viewShopDetails(shopId)
+              </text>
+
+              {/* 6. getShopWithProducts */}
+              <path
+                d="M 350 250 Q 460 240 570 250"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-blue)"
+              />
+              <text
+                x="460"
+                y="235"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                6. getShopWithProducts()
+              </text>
+
+              {/* 7. returnShopData */}
+              <path
+                d="M 570 280 Q 460 270 350 280"
+                stroke="#8B5CF6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-purple)"
+              />
+              <text
+                x="460"
+                y="265"
+                textAnchor="middle"
+                className="fill-purple-600 text-xs font-medium"
+              >
+                7. returnShopData()
+              </text>
+
+              {/* 8. renderShopPage */}
+              <path
+                d="M 350 310 Q 240 300 130 310"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-blue)"
+              />
+              <text
+                x="240"
+                y="295"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                8. renderShopPage()
+              </text>
+
+              {/* 9. addToCart */}
+              <path
+                d="M 130 340 Q 240 330 350 340"
+                stroke="#10B981"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-green)"
+              />
+              <text
+                x="240"
+                y="325"
+                textAnchor="middle"
+                className="fill-green-600 text-xs font-medium"
+              >
+                9. addToCart(productId, qty)
+              </text>
+
+              {/* 10. initiateCheckout */}
+              <path
+                d="M 130 370 Q 240 360 350 370"
+                stroke="#10B981"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-green)"
+              />
+              <text
+                x="240"
+                y="355"
+                textAnchor="middle"
+                className="fill-green-600 text-xs font-medium"
+              >
+                10. initiateCheckout()
+              </text>
+
+              {/* 11. createOrder */}
+              <path
+                d="M 350 400 Q 460 390 570 400"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-blue)"
+              />
+              <text
+                x="460"
+                y="385"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                11. createOrder(cartData)
+              </text>
+
+              {/* 12. processPayment */}
+              <path
+                d="M 350 430 Q 570 420 790 430"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-blue)"
+              />
+              <text
+                x="570"
+                y="415"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                12. processPayment(amount)
+              </text>
+
+              {/* 13. paymentConfirmed */}
+              <path
+                d="M 790 460 Q 570 450 350 460"
+                stroke="#F97316"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-orange)"
+              />
+              <text
+                x="570"
+                y="445"
+                textAnchor="middle"
+                className="fill-orange-600 text-xs font-medium"
+              >
+                13. paymentConfirmed()
+              </text>
+
+              {/* 14. updateStockLevels */}
+              <path
+                d="M 350 490 Q 460 480 570 490"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-blue)"
+              />
+              <text
+                x="460"
+                y="475"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                14. updateStockLevels()
+              </text>
+
+              {/* 15. sendOrderNotification */}
+              <path
+                d="M 350 520 Q 680 510 1010 520"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-blue)"
+              />
+              <text
+                x="680"
+                y="505"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                15. sendOrderNotification()
+              </text>
+
+              {/* 16. displayOrderConfirmation */}
+              <path
+                d="M 350 550 Q 240 540 130 550"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq2-arrow-blue)"
+              />
+              <text
+                x="240"
+                y="535"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                16. displayOrderConfirmation()
+              </text>
+
+              {/* Activation boxes */}
+              <rect
+                x="345"
+                y="100"
+                width="10"
+                height="460"
+                fill="#3B82F6"
+                opacity="0.2"
+              />
+              <rect
+                x="565"
+                y="130"
+                width="10"
+                height="360"
+                fill="#8B5CF6"
+                opacity="0.2"
+              />
+              <rect
+                x="785"
+                y="430"
+                width="10"
+                height="30"
+                fill="#F97316"
+                opacity="0.2"
+              />
+              <rect
+                x="1005"
+                y="520"
+                width="10"
+                height="20"
+                fill="#EF4444"
+                opacity="0.2"
+              />
             </svg>
           </div>
         </div>
@@ -802,318 +905,16 @@ export default function SequenceDiagram() {
             </p>
           </div>
 
-          <div className="relative bg-slate-50 border-2 border-slate-200 rounded-lg p-6 min-h-[500px]">
-            {/* Lifelines */}
-            <div className="absolute top-8 left-1/2 transform -translate-x-1/2 flex justify-between w-full max-w-4xl">
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-blue-500 border-2 border-blue-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">Shop App</span>
-                </div>
-                <div className="w-0.5 h-[400px] bg-slate-400"></div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-green-500 border-2 border-green-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">
-                    Sync Manager
-                  </span>
-                </div>
-                <div className="w-0.5 h-[400px] bg-slate-400"></div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-purple-500 border-2 border-purple-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">
-                    Cloud API
-                  </span>
-                </div>
-                <div className="w-0.5 h-[400px] bg-slate-400"></div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="w-20 h-12 bg-orange-500 border-2 border-orange-600 rounded-lg flex items-center justify-center mb-2">
-                  <span className="text-white font-bold text-xs">Cloud DB</span>
-                </div>
-                <div className="w-0.5 h-[400px] bg-slate-400"></div>
-              </div>
-            </div>
-
-            {/* Sequence Messages */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none">
-              {/* Message 1: Network Restored */}
-              <line
-                x1="120"
-                y1="120"
-                x2="240"
-                y2="120"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="180"
-                y="115"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                1. networkRestored()
-              </text>
-
-              {/* Message 2: Check Pending Changes */}
-              <line
-                x1="240"
-                y1="140"
-                x2="120"
-                y2="140"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
-              />
-              <text
-                x="180"
-                y="135"
-                textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
-              >
-                2. getPendingChanges()
-              </text>
-
-              {/* Message 3: Return Changes */}
-              <line
-                x1="120"
-                y1="160"
-                x2="240"
-                y2="160"
-                stroke="#3B82F6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-blue)"
-              />
-              <text
-                x="180"
-                y="155"
-                textAnchor="middle"
-                className="text-xs fill-blue-600 font-medium"
-              >
-                3. returnChangeQueue()
-              </text>
-
-              {/* Message 4: Start Sync */}
-              <line
-                x1="240"
-                y1="180"
-                x2="360"
-                y2="180"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
-              />
-              <text
-                x="300"
-                y="175"
-                textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
-              >
-                4. initiateSync(changes)
-              </text>
-
-              {/* Message 5: Authenticate */}
-              <line
-                x1="360"
-                y1="200"
-                x2="480"
-                y2="200"
-                stroke="#8B5CF6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-purple)"
-              />
-              <text
-                x="420"
-                y="195"
-                textAnchor="middle"
-                className="text-xs fill-purple-600 font-medium"
-              >
-                5. authenticateShop()
-              </text>
-
-              {/* Message 6: Auth Success */}
-              <line
-                x1="480"
-                y1="220"
-                x2="360"
-                y2="220"
-                stroke="#F97316"
-                strokeWidth="2"
-                markerEnd="url(#arrow-orange)"
-              />
-              <text
-                x="420"
-                y="215"
-                textAnchor="middle"
-                className="text-xs fill-orange-600 font-medium"
-              >
-                6. authToken()
-              </text>
-
-              {/* Message 7: Sync Products */}
-              <line
-                x1="360"
-                y1="240"
-                x2="480"
-                y2="240"
-                stroke="#8B5CF6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-purple)"
-              />
-              <text
-                x="420"
-                y="235"
-                textAnchor="middle"
-                className="text-xs fill-purple-600 font-medium"
-              >
-                7. syncProducts(changes)
-              </text>
-
-              {/* Message 8: Update Products */}
-              <line
-                x1="480"
-                y1="260"
-                x2="360"
-                y2="260"
-                stroke="#F97316"
-                strokeWidth="2"
-                markerEnd="url(#arrow-orange)"
-              />
-              <text
-                x="420"
-                y="255"
-                textAnchor="middle"
-                className="text-xs fill-orange-600 font-medium"
-              >
-                8. updateProductRecords()
-              </text>
-
-              {/* Message 9: Sync Orders */}
-              <line
-                x1="360"
-                y1="280"
-                x2="480"
-                y2="280"
-                stroke="#8B5CF6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-purple)"
-              />
-              <text
-                x="420"
-                y="275"
-                textAnchor="middle"
-                className="text-xs fill-purple-600 font-medium"
-              >
-                9. syncOrders(changes)
-              </text>
-
-              {/* Message 10: Update Orders */}
-              <line
-                x1="480"
-                y1="300"
-                x2="360"
-                y2="300"
-                stroke="#F97316"
-                strokeWidth="2"
-                markerEnd="url(#arrow-orange)"
-              />
-              <text
-                x="420"
-                y="295"
-                textAnchor="middle"
-                className="text-xs fill-orange-600 font-medium"
-              >
-                10. updateOrderRecords()
-              </text>
-
-              {/* Message 11: Sync Complete */}
-              <line
-                x1="360"
-                y1="320"
-                x2="240"
-                y2="320"
-                stroke="#8B5CF6"
-                strokeWidth="2"
-                markerEnd="url(#arrow-purple)"
-              />
-              <text
-                x="300"
-                y="315"
-                textAnchor="middle"
-                className="text-xs fill-purple-600 font-medium"
-              >
-                11. syncCompleted()
-              </text>
-
-              {/* Message 12: Update Local Status */}
-              <line
-                x1="240"
-                y1="340"
-                x2="120"
-                y2="340"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
-              />
-              <text
-                x="180"
-                y="335"
-                textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
-              >
-                12. markChangesSynced()
-              </text>
-
-              {/* Message 13: Show Sync Status */}
-              <line
-                x1="240"
-                y1="360"
-                x2="120"
-                y2="360"
-                stroke="#10B981"
-                strokeWidth="2"
-                markerEnd="url(#arrow-green)"
-              />
-              <text
-                x="180"
-                y="355"
-                textAnchor="middle"
-                className="text-xs fill-green-600 font-medium"
-              >
-                13. displaySyncStatus()
-              </text>
-
-              {/* Activation bars */}
-              <rect
-                x="235"
-                y="120"
-                width="10"
-                height="240"
-                fill="#10B981"
-                opacity="0.3"
-              />
-              <rect
-                x="355"
-                y="180"
-                width="10"
-                height="160"
-                fill="#8B5CF6"
-                opacity="0.3"
-              />
-              <rect
-                x="475"
-                y="200"
-                width="10"
-                height="120"
-                fill="#F97316"
-                opacity="0.3"
-              />
-
-              {/* Arrow markers */}
+          <div className="bg-slate-50 border-2 border-slate-200 rounded-lg p-6 overflow-x-auto">
+            <svg
+              viewBox="0 0 1200 550"
+              className="w-full min-w-max h-auto"
+              preserveAspectRatio="xMidYMid meet"
+              style={{ minHeight: "450px" }}
+            >
               <defs>
                 <marker
-                  id="arrow-blue"
+                  id="seq3-arrow-blue"
                   markerWidth="10"
                   markerHeight="10"
                   refX="9"
@@ -1124,7 +925,7 @@ export default function SequenceDiagram() {
                   <path d="M0,0 L0,6 L9,3 z" fill="#3B82F6" />
                 </marker>
                 <marker
-                  id="arrow-green"
+                  id="seq3-arrow-green"
                   markerWidth="10"
                   markerHeight="10"
                   refX="9"
@@ -1135,7 +936,7 @@ export default function SequenceDiagram() {
                   <path d="M0,0 L0,6 L9,3 z" fill="#10B981" />
                 </marker>
                 <marker
-                  id="arrow-purple"
+                  id="seq3-arrow-purple"
                   markerWidth="10"
                   markerHeight="10"
                   refX="9"
@@ -1146,7 +947,7 @@ export default function SequenceDiagram() {
                   <path d="M0,0 L0,6 L9,3 z" fill="#8B5CF6" />
                 </marker>
                 <marker
-                  id="arrow-orange"
+                  id="seq3-arrow-orange"
                   markerWidth="10"
                   markerHeight="10"
                   refX="9"
@@ -1157,6 +958,338 @@ export default function SequenceDiagram() {
                   <path d="M0,0 L0,6 L9,3 z" fill="#F97316" />
                 </marker>
               </defs>
+
+              {/* Actor headers */}
+              <g id="seq3-actor-headers">
+                <rect
+                  x="60"
+                  y="20"
+                  width="100"
+                  height="40"
+                  fill="#3B82F6"
+                  rx="4"
+                />
+                <text
+                  x="110"
+                  y="45"
+                  textAnchor="middle"
+                  className="fill-white text-sm font-bold"
+                >
+                  Shop App
+                </text>
+
+                <rect
+                  x="260"
+                  y="20"
+                  width="120"
+                  height="40"
+                  fill="#10B981"
+                  rx="4"
+                />
+                <text
+                  x="320"
+                  y="45"
+                  textAnchor="middle"
+                  className="fill-white text-sm font-bold"
+                >
+                  Sync Manager
+                </text>
+
+                <rect
+                  x="500"
+                  y="20"
+                  width="100"
+                  height="40"
+                  fill="#8B5CF6"
+                  rx="4"
+                />
+                <text
+                  x="550"
+                  y="45"
+                  textAnchor="middle"
+                  className="fill-white text-sm font-bold"
+                >
+                  Cloud API
+                </text>
+
+                <rect
+                  x="700"
+                  y="20"
+                  width="100"
+                  height="40"
+                  fill="#F97316"
+                  rx="4"
+                />
+                <text
+                  x="750"
+                  y="45"
+                  textAnchor="middle"
+                  className="fill-white text-sm font-bold"
+                >
+                  Cloud DB
+                </text>
+              </g>
+
+              {/* Lifelines (dashed vertical lines) */}
+              <g
+                id="seq3-lifelines"
+                stroke="#9CA3AF"
+                strokeDasharray="5,5"
+                strokeWidth="1.5"
+              >
+                <line x1="110" y1="60" x2="110" y2="520" />
+                <line x1="320" y1="60" x2="320" y2="520" />
+                <line x1="550" y1="60" x2="550" y2="520" />
+                <line x1="750" y1="60" x2="750" y2="520" />
+              </g>
+
+              {/* Sequence Messages */}
+              {/* 1. networkRestored */}
+              <path
+                d="M 110 90 Q 215 80 320 90"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-blue)"
+              />
+              <text
+                x="215"
+                y="75"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                1. networkRestored()
+              </text>
+
+              {/* 2. getPendingChanges */}
+              <path
+                d="M 320 120 Q 215 110 110 120"
+                stroke="#10B981"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-green)"
+              />
+              <text
+                x="215"
+                y="105"
+                textAnchor="middle"
+                className="fill-green-600 text-xs font-medium"
+              >
+                2. getPendingChanges()
+              </text>
+
+              {/* 3. returnChangeQueue */}
+              <path
+                d="M 110 150 Q 215 140 320 150"
+                stroke="#3B82F6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-blue)"
+              />
+              <text
+                x="215"
+                y="135"
+                textAnchor="middle"
+                className="fill-blue-600 text-xs font-medium"
+              >
+                3. returnChangeQueue()
+              </text>
+
+              {/* 4. initiateSync */}
+              <path
+                d="M 320 180 Q 435 170 550 180"
+                stroke="#10B981"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-green)"
+              />
+              <text
+                x="435"
+                y="165"
+                textAnchor="middle"
+                className="fill-green-600 text-xs font-medium"
+              >
+                4. initiateSync(changes)
+              </text>
+
+              {/* 5. authenticateShop */}
+              <path
+                d="M 550 210 Q 650 200 750 210"
+                stroke="#8B5CF6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-purple)"
+              />
+              <text
+                x="650"
+                y="195"
+                textAnchor="middle"
+                className="fill-purple-600 text-xs font-medium"
+              >
+                5. authenticateShop()
+              </text>
+
+              {/* 6. authToken */}
+              <path
+                d="M 750 240 Q 650 230 550 240"
+                stroke="#F97316"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-orange)"
+              />
+              <text
+                x="650"
+                y="225"
+                textAnchor="middle"
+                className="fill-orange-600 text-xs font-medium"
+              >
+                6. authToken()
+              </text>
+
+              {/* 7. syncProducts */}
+              <path
+                d="M 550 270 Q 650 260 750 270"
+                stroke="#8B5CF6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-purple)"
+              />
+              <text
+                x="650"
+                y="255"
+                textAnchor="middle"
+                className="fill-purple-600 text-xs font-medium"
+              >
+                7. syncProducts(changes)
+              </text>
+
+              {/* 8. updateProductRecords */}
+              <path
+                d="M 750 300 Q 650 290 550 300"
+                stroke="#F97316"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-orange)"
+              />
+              <text
+                x="650"
+                y="285"
+                textAnchor="middle"
+                className="fill-orange-600 text-xs font-medium"
+              >
+                8. updateProductRecords()
+              </text>
+
+              {/* 9. syncOrders */}
+              <path
+                d="M 550 330 Q 650 320 750 330"
+                stroke="#8B5CF6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-purple)"
+              />
+              <text
+                x="650"
+                y="315"
+                textAnchor="middle"
+                className="fill-purple-600 text-xs font-medium"
+              >
+                9. syncOrders(changes)
+              </text>
+
+              {/* 10. updateOrderRecords */}
+              <path
+                d="M 750 360 Q 650 350 550 360"
+                stroke="#F97316"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-orange)"
+              />
+              <text
+                x="650"
+                y="345"
+                textAnchor="middle"
+                className="fill-orange-600 text-xs font-medium"
+              >
+                10. updateOrderRecords()
+              </text>
+
+              {/* 11. syncCompleted */}
+              <path
+                d="M 550 390 Q 435 380 320 390"
+                stroke="#8B5CF6"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-purple)"
+              />
+              <text
+                x="435"
+                y="375"
+                textAnchor="middle"
+                className="fill-purple-600 text-xs font-medium"
+              >
+                11. syncCompleted()
+              </text>
+
+              {/* 12. markChangesSynced */}
+              <path
+                d="M 320 420 Q 215 410 110 420"
+                stroke="#10B981"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-green)"
+              />
+              <text
+                x="215"
+                y="405"
+                textAnchor="middle"
+                className="fill-green-600 text-xs font-medium"
+              >
+                12. markChangesSynced()
+              </text>
+
+              {/* 13. displaySyncStatus */}
+              <path
+                d="M 320 450 Q 215 440 110 450"
+                stroke="#10B981"
+                strokeWidth="2"
+                fill="none"
+                markerEnd="url(#seq3-arrow-green)"
+              />
+              <text
+                x="215"
+                y="435"
+                textAnchor="middle"
+                className="fill-green-600 text-xs font-medium"
+              >
+                13. displaySyncStatus()
+              </text>
+
+              {/* Activation boxes */}
+              <rect
+                x="315"
+                y="90"
+                width="10"
+                height="370"
+                fill="#10B981"
+                opacity="0.2"
+              />
+              <rect
+                x="545"
+                y="180"
+                width="10"
+                height="210"
+                fill="#8B5CF6"
+                opacity="0.2"
+              />
+              <rect
+                x="745"
+                y="210"
+                width="10"
+                height="150"
+                fill="#F97316"
+                opacity="0.2"
+              />
             </svg>
           </div>
         </div>

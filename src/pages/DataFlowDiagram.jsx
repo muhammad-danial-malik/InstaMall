@@ -1,6 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { ArrowLeft, Database, Store, CreditCard, Truck, User } from "lucide-react";
+import {
+  ArrowLeft,
+  Database,
+  Store,
+  CreditCard,
+  Truck,
+  User,
+} from "lucide-react";
 
 export default function DataFlowDiagram() {
   const navigate = useNavigate();
@@ -38,337 +45,378 @@ export default function DataFlowDiagram() {
               <span className="w-3 h-3 bg-indigo-500 rounded-full mr-3"></span>
               Level 0 DFD - Context Diagram
             </h2>
-            <div className="bg-slate-50 rounded-lg p-6">
-              <svg viewBox="0 0 800 500" className="w-full h-auto">
-                <defs>
-                  <marker
-                    id="arrowhead-indigo"
-                    markerWidth="10"
-                    markerHeight="7"
-                    refX="9"
-                    refY="3.5"
-                    orient="auto"
+            <div className="bg-slate-50 rounded-lg p-8 overflow-x-auto flex justify-center">
+              <div className="flex flex-col items-center w-full max-w-6xl">
+                {/* Payment Gateway - Top */}
+                <div className="flex justify-center mb-8">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="flex flex-col items-center gap-2 bg-linear-to-br from-amber-50 to-amber-100 border-2 border-amber-400 rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition-shadow">
+                      <CreditCard className="h-8 w-8 text-amber-600" />
+                      <div className="text-center">
+                        <p className="text-sm font-semibold text-slate-900">
+                          Payment
+                        </p>
+                        <p className="text-sm font-semibold text-slate-900">
+                          Gateway
+                        </p>
+                        <p className="text-xs text-slate-700">Card</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Arrow Down */}
+                <svg
+                  className="h-12 w-full max-w-xs mb-4"
+                  viewBox="0 0 100 40"
+                  preserveAspectRatio="none"
+                >
+                  <defs>
+                    <marker
+                      id="arrowdown"
+                      markerWidth="10"
+                      markerHeight="10"
+                      refX="5"
+                      refY="5"
+                      orient="auto"
+                    >
+                      <polygon points="0,0 10,5 0,10" fill="#6366f1" />
+                    </marker>
+                  </defs>
+                  <line
+                    x1="50"
+                    y1="0"
+                    x2="50"
+                    y2="32"
+                    stroke="#6366f1"
+                    strokeWidth="2"
+                    markerEnd="url(#arrowdown)"
+                  />
+                  <text
+                    x="65"
+                    y="20"
+                    fontSize="10"
+                    fill="#6366f1"
+                    className="font-semibold"
                   >
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1" />
-                  </marker>
-                </defs>
+                    Payment Info
+                  </text>
+                </svg>
 
-                {/* External Entities */}
-                {/* Customer */}
-                <rect
-                  x="50"
-                  y="200"
-                  width="80"
-                  height="60"
-                  fill="#fef3c7"
-                  stroke="#f59e0b"
-                  strokeWidth="2"
-                  rx="5"
-                />
-                <text
-                  x="90"
-                  y="225"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Customer
-                </text>
-                <text
-                  x="90"
-                  y="240"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  User
-                </text>
+                {/* Main Row - Customer | System | Vendor */}
+                <div className="flex justify-between items-center gap-4 w-full mb-4">
+                  {/* Customer */}
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="flex flex-col items-center gap-2 bg-linear-to-br from-amber-50 to-amber-100 border-2 border-amber-400 rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition-shadow w-32">
+                      <User className="h-8 w-8 text-amber-600" />
+                      <div className="text-center">
+                        <p className="text-sm font-semibold text-slate-900">
+                          Customer
+                        </p>
+                        <p className="text-xs text-slate-700">User</p>
+                      </div>
+                    </div>
+                  </div>
 
-                {/* Vendor */}
-                <rect
-                  x="670"
-                  y="200"
-                  width="80"
-                  height="60"
-                  fill="#fef3c7"
-                  stroke="#f59e0b"
-                  strokeWidth="2"
-                  rx="5"
-                />
-                <text
-                  x="710"
-                  y="225"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Vendor
-                </text>
-                <text
-                  x="710"
-                  y="240"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Store
-                </text>
+                  {/* Arrows */}
+                  <svg
+                    className="flex-1 h-16"
+                    viewBox="0 0 100 60"
+                    preserveAspectRatio="none"
+                  >
+                    <defs>
+                      <marker
+                        id="arrow-right"
+                        markerWidth="10"
+                        markerHeight="10"
+                        refX="9"
+                        refY="5"
+                        orient="auto"
+                      >
+                        <polygon points="0,0 10,5 0,10" fill="#6366f1" />
+                      </marker>
+                      <marker
+                        id="arrow-left"
+                        markerWidth="10"
+                        markerHeight="10"
+                        refX="1"
+                        refY="5"
+                        orient="auto"
+                      >
+                        <polygon points="10,0 0,5 10,10" fill="#6366f1" />
+                      </marker>
+                    </defs>
+                    {/* Forward arrow */}
+                    <line
+                      x1="10"
+                      y1="20"
+                      x2="90"
+                      y2="20"
+                      stroke="#6366f1"
+                      strokeWidth="2"
+                      markerEnd="url(#arrow-right)"
+                    />
+                    <text
+                      x="50"
+                      y="15"
+                      fontSize="10"
+                      fill="#6366f1"
+                      textAnchor="middle"
+                      className="font-semibold"
+                    >
+                      Order Request
+                    </text>
+                    {/* Back arrow */}
+                    <line
+                      x1="90"
+                      y1="40"
+                      x2="10"
+                      y2="40"
+                      stroke="#6366f1"
+                      strokeWidth="2"
+                      markerEnd="url(#arrow-left)"
+                    />
+                    <text
+                      x="50"
+                      y="55"
+                      fontSize="10"
+                      fill="#6366f1"
+                      textAnchor="middle"
+                      className="font-semibold"
+                    >
+                      Order Confirmation
+                    </text>
+                  </svg>
 
-                {/* Payment Gateway */}
-                <rect
-                  x="360"
-                  y="50"
-                  width="80"
-                  height="60"
-                  fill="#fef3c7"
-                  stroke="#f59e0b"
-                  strokeWidth="2"
-                  rx="5"
-                />
-                <text
-                  x="400"
-                  y="70"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Payment
-                </text>
-                <text
-                  x="400"
-                  y="83"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Gateway
-                </text>
-                <text
-                  x="400"
-                  y="98"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Card
-                </text>
+                  {/* InstaMall System Center */}
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="flex flex-col items-center justify-center bg-linear-to-br from-indigo-100 to-indigo-200 border-4 border-indigo-500 rounded-full w-40 h-40 shadow-xl hover:shadow-2xl transition-shadow">
+                      <p className="text-lg font-bold text-slate-900">
+                        InstaMall
+                      </p>
+                      <p className="text-lg font-bold text-slate-900">System</p>
+                      <p className="text-xs text-indigo-600 font-semibold">
+                        Level 0
+                      </p>
+                    </div>
+                  </div>
 
-                {/* Shipping Service */}
-                <rect
-                  x="360"
-                  y="390"
-                  width="80"
-                  height="60"
-                  fill="#fef3c7"
-                  stroke="#f59e0b"
-                  strokeWidth="2"
-                  rx="5"
-                />
-                <text
-                  x="400"
-                  y="410"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Shipping
-                </text>
-                <text
-                  x="400"
-                  y="423"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Service
-                </text>
-                <text
-                  x="400"
-                  y="438"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Truck
-                </text>
+                  {/* Arrows */}
+                  <svg
+                    className="flex-1 h-16"
+                    viewBox="0 0 100 60"
+                    preserveAspectRatio="none"
+                  >
+                    <defs>
+                      <marker
+                        id="arrow-right2"
+                        markerWidth="10"
+                        markerHeight="10"
+                        refX="9"
+                        refY="5"
+                        orient="auto"
+                      >
+                        <polygon points="0,0 10,5 0,10" fill="#6366f1" />
+                      </marker>
+                      <marker
+                        id="arrow-left2"
+                        markerWidth="10"
+                        markerHeight="10"
+                        refX="1"
+                        refY="5"
+                        orient="auto"
+                      >
+                        <polygon points="10,0 0,5 10,10" fill="#6366f1" />
+                      </marker>
+                    </defs>
+                    {/* Forward arrow */}
+                    <line
+                      x1="10"
+                      y1="20"
+                      x2="90"
+                      y2="20"
+                      stroke="#6366f1"
+                      strokeWidth="2"
+                      markerEnd="url(#arrow-right2)"
+                    />
+                    <text
+                      x="50"
+                      y="15"
+                      fontSize="10"
+                      fill="#6366f1"
+                      textAnchor="middle"
+                      className="font-semibold"
+                    >
+                      Product Data
+                    </text>
+                    {/* Back arrow */}
+                    <line
+                      x1="90"
+                      y1="40"
+                      x2="10"
+                      y2="40"
+                      stroke="#6366f1"
+                      strokeWidth="2"
+                      markerEnd="url(#arrow-left2)"
+                    />
+                    <text
+                      x="50"
+                      y="55"
+                      fontSize="10"
+                      fill="#6366f1"
+                      textAnchor="middle"
+                      className="font-semibold"
+                    >
+                      Inventory Update
+                    </text>
+                  </svg>
 
-                {/* Main Process - InstaMall System */}
-                <circle
-                  cx="400"
-                  cy="250"
-                  r="60"
-                  fill="#e0e7ff"
-                  stroke="#6366f1"
-                  strokeWidth="3"
-                />
-                <text
-                  x="400"
-                  y="245"
-                  textAnchor="middle"
-                  className="text-sm font-bold fill-slate-900"
-                >
-                  InstaMall
-                </text>
-                <text
-                  x="400"
-                  y="258"
-                  textAnchor="middle"
-                  className="text-sm font-bold fill-slate-900"
-                >
-                  System
-                </text>
-                <text
-                  x="400"
-                  y="275"
-                  textAnchor="middle"
-                  className="text-xs fill-indigo-600"
-                >
-                  0
-                </text>
+                  {/* Vendor */}
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="flex flex-col items-center gap-2 bg-linear-to-br from-amber-50 to-amber-100 border-2 border-amber-400 rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition-shadow w-32">
+                      <Store className="h-8 w-8 text-amber-600" />
+                      <div className="text-center">
+                        <p className="text-sm font-semibold text-slate-900">
+                          Vendor
+                        </p>
+                        <p className="text-xs text-slate-700">Store</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                {/* Data Flows */}
-                {/* Customer to System */}
-                <line
-                  x1="130"
-                  y1="230"
-                  x2="340"
-                  y2="230"
-                  stroke="#6366f1"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-indigo)"
-                />
-                <text
-                  x="235"
-                  y="225"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
+                {/* Arrow Down */}
+                <svg
+                  className="h-12 w-full max-w-xs mb-4 mt-4"
+                  viewBox="0 0 100 40"
+                  preserveAspectRatio="none"
                 >
-                  Order Request
-                </text>
+                  <defs>
+                    <marker
+                      id="arrowdown2"
+                      markerWidth="10"
+                      markerHeight="10"
+                      refX="5"
+                      refY="5"
+                      orient="auto"
+                    >
+                      <polygon points="0,0 10,5 0,10" fill="#6366f1" />
+                    </marker>
+                  </defs>
+                  <line
+                    x1="50"
+                    y1="0"
+                    x2="50"
+                    y2="32"
+                    stroke="#6366f1"
+                    strokeWidth="2"
+                    markerEnd="url(#arrowdown2)"
+                  />
+                  <text
+                    x="35"
+                    y="20"
+                    fontSize="10"
+                    fill="#6366f1"
+                    className="font-semibold"
+                  >
+                    Shipping Request
+                  </text>
+                </svg>
 
-                {/* System to Customer */}
-                <line
-                  x1="340"
-                  y1="270"
-                  x2="130"
-                  y2="270"
-                  stroke="#6366f1"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-indigo)"
-                />
-                <text
-                  x="235"
-                  y="275"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
+                {/* Arrow Up */}
+                <svg
+                  className="h-12 w-full max-w-xs mb-8"
+                  viewBox="0 0 100 40"
+                  preserveAspectRatio="none"
                 >
-                  Order Confirmation
-                </text>
+                  <defs>
+                    <marker
+                      id="arrowup2"
+                      markerWidth="10"
+                      markerHeight="10"
+                      refX="5"
+                      refY="5"
+                      orient="auto"
+                    >
+                      <polygon points="10,0 0,5 10,10" fill="#6366f1" />
+                    </marker>
+                  </defs>
+                  <line
+                    x1="50"
+                    y1="40"
+                    x2="50"
+                    y2="8"
+                    stroke="#6366f1"
+                    strokeWidth="2"
+                    markerEnd="url(#arrowup2)"
+                  />
+                  <text
+                    x="65"
+                    y="25"
+                    fontSize="10"
+                    fill="#6366f1"
+                    className="font-semibold"
+                  >
+                    Tracking Info
+                  </text>
+                </svg>
 
-                {/* Payment Gateway to System */}
-                <line
-                  x1="400"
-                  y1="110"
-                  x2="400"
-                  y2="190"
-                  stroke="#6366f1"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-indigo)"
-                />
-                <text
-                  x="410"
-                  y="155"
-                  textAnchor="start"
-                  className="text-xs fill-slate-700"
-                >
-                  Payment Info
-                </text>
+                {/* Shipping Service - Bottom */}
+                <div className="flex justify-center">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="flex flex-col items-center gap-2 bg-linear-to-br from-amber-50 to-amber-100 border-2 border-amber-400 rounded-xl px-6 py-4 shadow-md hover:shadow-lg transition-shadow">
+                      <Truck className="h-8 w-8 text-amber-600" />
+                      <div className="text-center">
+                        <p className="text-sm font-semibold text-slate-900">
+                          Shipping
+                        </p>
+                        <p className="text-sm font-semibold text-slate-900">
+                          Service
+                        </p>
+                        <p className="text-xs text-slate-700">Truck</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                {/* System to Payment Gateway */}
-                <line
-                  x1="400"
-                  y1="310"
-                  x2="400"
-                  y2="390"
-                  stroke="#6366f1"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-indigo)"
-                />
-                <text
-                  x="410"
-                  y="355"
-                  textAnchor="start"
-                  className="text-xs fill-slate-700"
+                {/* Arrow Up from Shipping to System */}
+                <svg
+                  className="h-12 w-full max-w-xs mt-8"
+                  viewBox="0 0 100 40"
+                  preserveAspectRatio="none"
                 >
-                  Payment Status
-                </text>
-
-                {/* System to Vendor */}
-                <line
-                  x1="460"
-                  y1="250"
-                  x2="670"
-                  y2="250"
-                  stroke="#6366f1"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-indigo)"
-                />
-                <text
-                  x="565"
-                  y="245"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Product Data
-                </text>
-
-                {/* Vendor to System */}
-                <line
-                  x1="670"
-                  y1="290"
-                  x2="460"
-                  y2="290"
-                  stroke="#6366f1"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-indigo)"
-                />
-                <text
-                  x="565"
-                  y="295"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Inventory Update
-                </text>
-
-                {/* System to Shipping */}
-                <line
-                  x1="400"
-                  y1="310"
-                  x2="400"
-                  y2="390"
-                  stroke="#6366f1"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-indigo)"
-                />
-                <text
-                  x="380"
-                  y="355"
-                  textAnchor="end"
-                  className="text-xs fill-slate-700"
-                >
-                  Shipping Request
-                </text>
-
-                {/* Shipping to System */}
-                <line
-                  x1="400"
-                  y1="390"
-                  x2="400"
-                  y2="310"
-                  stroke="#6366f1"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-indigo)"
-                />
-                <text
-                  x="380"
-                  y="355"
-                  textAnchor="end"
-                  className="text-xs fill-slate-700"
-                >
-                  Tracking Info
-                </text>
-              </svg>
+                  <defs>
+                    <marker
+                      id="arrowup"
+                      markerWidth="10"
+                      markerHeight="10"
+                      refX="5"
+                      refY="5"
+                      orient="auto"
+                    >
+                      <polygon points="10,0 0,5 10,10" fill="#6366f1" />
+                    </marker>
+                  </defs>
+                  <line
+                    x1="50"
+                    y1="40"
+                    x2="50"
+                    y2="8"
+                    stroke="#6366f1"
+                    strokeWidth="2"
+                    markerEnd="url(#arrowup)"
+                  />
+                  <text
+                    x="65"
+                    y="25"
+                    fontSize="10"
+                    fill="#6366f1"
+                    className="font-semibold"
+                  >
+                    Payment Status
+                  </text>
+                </svg>
+              </div>
             </div>
           </div>
 
@@ -378,694 +426,152 @@ export default function DataFlowDiagram() {
               <span className="w-3 h-3 bg-purple-500 rounded-full mr-3"></span>
               Level 1 DFD - Detailed Processes
             </h2>
-            <div className="bg-slate-50 rounded-lg p-6">
-              <svg viewBox="0 0 800 600" className="w-full h-auto">
-                <defs>
-                  <marker
-                    id="arrowhead-purple"
-                    markerWidth="10"
-                    markerHeight="7"
-                    refX="9"
-                    refY="3.5"
-                    orient="auto"
-                  >
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6" />
-                  </marker>
-                </defs>
+            <div className="bg-slate-50 rounded-lg p-8 overflow-x-auto">
+              <div className="flex flex-col items-center w-full min-h-screen">
+                {/* Top Row - Data Stores */}
+                <div className="flex justify-around items-start w-full mb-12 gap-8">
+                  <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center gap-2 bg-linear-to-br from-blue-50 to-blue-100 border-2 border-blue-400 rounded-lg px-4 py-3 shadow-md w-24">
+                      <p className="text-xs font-semibold text-slate-900">
+                        Customer DB
+                      </p>
+                      <p className="text-xs text-blue-600 font-bold">D1</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center gap-2 bg-linear-to-br from-blue-50 to-blue-100 border-2 border-blue-400 rounded-lg px-4 py-3 shadow-md w-24">
+                      <p className="text-xs font-semibold text-slate-900">
+                        Product DB
+                      </p>
+                      <p className="text-xs text-blue-600 font-bold">D2</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center gap-2 bg-linear-to-br from-blue-50 to-blue-100 border-2 border-blue-400 rounded-lg px-4 py-3 shadow-md w-24">
+                      <p className="text-xs font-semibold text-slate-900">
+                        Order DB
+                      </p>
+                      <p className="text-xs text-blue-600 font-bold">D3</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center gap-2 bg-linear-to-br from-blue-50 to-blue-100 border-2 border-blue-400 rounded-lg px-4 py-3 shadow-md w-24">
+                      <p className="text-xs font-semibold text-slate-900">
+                        Payment DB
+                      </p>
+                      <p className="text-xs text-blue-600 font-bold">D4</p>
+                    </div>
+                  </div>
+                </div>
 
-                {/* External Entities */}
-                <rect
-                  x="20"
-                  y="250"
-                  width="80"
-                  height="60"
-                  fill="#fef3c7"
-                  stroke="#f59e0b"
-                  strokeWidth="2"
-                  rx="5"
-                />
-                <text
-                  x="60"
-                  y="275"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Customer
-                </text>
+                {/* Middle Row - Processes */}
+                <div className="flex justify-around items-center w-full mb-12 gap-8">
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="flex flex-col items-center justify-center bg-linear-to-br from-amber-50 to-amber-100 border-2 border-amber-400 rounded-full w-24 h-24 shadow-md hover:shadow-lg transition-shadow">
+                      <p className="text-xs font-bold text-slate-900">
+                        Register
+                      </p>
+                      <p className="text-xs font-bold text-slate-900">User</p>
+                      <p className="text-xs text-amber-600 font-bold mt-1">1</p>
+                    </div>
+                  </div>
 
-                <rect
-                  x="700"
-                  y="250"
-                  width="80"
-                  height="60"
-                  fill="#fef3c7"
-                  stroke="#f59e0b"
-                  strokeWidth="2"
-                  rx="5"
-                />
-                <text
-                  x="740"
-                  y="275"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Vendor
-                </text>
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="flex flex-col items-center justify-center bg-linear-to-br from-amber-50 to-amber-100 border-2 border-amber-400 rounded-full w-24 h-24 shadow-md hover:shadow-lg transition-shadow">
+                      <p className="text-xs font-bold text-slate-900">Search</p>
+                      <p className="text-xs font-bold text-slate-900">
+                        Products
+                      </p>
+                      <p className="text-xs text-amber-600 font-bold mt-1">2</p>
+                    </div>
+                  </div>
 
-                {/* Data Stores */}
-                {/* Customer DB */}
-                <rect
-                  x="150"
-                  y="50"
-                  width="100"
-                  height="60"
-                  fill="#dbeafe"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <line
-                  x1="150"
-                  y1="70"
-                  x2="250"
-                  y2="70"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <line
-                  x1="150"
-                  y1="85"
-                  x2="250"
-                  y2="85"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <text
-                  x="200"
-                  y="68"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Customer DB
-                </text>
-                <text
-                  x="200"
-                  y="95"
-                  textAnchor="middle"
-                  className="text-xs fill-blue-600"
-                >
-                  D1
-                </text>
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="flex flex-col items-center justify-center bg-linear-to-br from-amber-50 to-amber-100 border-2 border-amber-400 rounded-full w-24 h-24 shadow-md hover:shadow-lg transition-shadow">
+                      <p className="text-xs font-bold text-slate-900">
+                        Process
+                      </p>
+                      <p className="text-xs font-bold text-slate-900">Order</p>
+                      <p className="text-xs text-amber-600 font-bold mt-1">3</p>
+                    </div>
+                  </div>
 
-                {/* Product DB */}
-                <rect
-                  x="150"
-                  y="500"
-                  width="100"
-                  height="60"
-                  fill="#dbeafe"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <line
-                  x1="150"
-                  y1="520"
-                  x2="250"
-                  y2="520"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <line
-                  x1="150"
-                  y1="535"
-                  x2="250"
-                  y2="535"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <text
-                  x="200"
-                  y="518"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Product DB
-                </text>
-                <text
-                  x="200"
-                  y="545"
-                  textAnchor="middle"
-                  className="text-xs fill-blue-600"
-                >
-                  D2
-                </text>
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="flex flex-col items-center justify-center bg-linear-to-br from-amber-50 to-amber-100 border-2 border-amber-400 rounded-full w-24 h-24 shadow-md hover:shadow-lg transition-shadow">
+                      <p className="text-xs font-bold text-slate-900">
+                        Process
+                      </p>
+                      <p className="text-xs font-bold text-slate-900">
+                        Payment
+                      </p>
+                      <p className="text-xs text-amber-600 font-bold mt-1">4</p>
+                    </div>
+                  </div>
+                </div>
 
-                {/* Order DB */}
-                <rect
-                  x="550"
-                  y="50"
-                  width="100"
-                  height="60"
-                  fill="#dbeafe"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <line
-                  x1="550"
-                  y1="70"
-                  x2="650"
-                  y2="70"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <line
-                  x1="550"
-                  y1="85"
-                  x2="650"
-                  y2="85"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <text
-                  x="600"
-                  y="68"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Order DB
-                </text>
-                <text
-                  x="600"
-                  y="95"
-                  textAnchor="middle"
-                  className="text-xs fill-blue-600"
-                >
-                  D3
-                </text>
+                {/* Bottom Row - External Entities */}
+                <div className="flex justify-around items-start w-full gap-8">
+                  <div className="flex-1 flex justify-center">
+                    <div className="flex flex-col items-center gap-2">
+                      <User className="h-8 w-8 text-amber-600" />
+                      <div className="flex flex-col items-center gap-2 bg-linear-to-br from-amber-50 to-amber-100 border-2 border-amber-400 rounded-xl px-4 py-3 shadow-md w-28">
+                        <p className="text-xs font-semibold text-slate-900">
+                          Customer
+                        </p>
+                        <p className="text-xs text-slate-700">User</p>
+                      </div>
+                    </div>
+                  </div>
 
-                {/* Payment DB */}
-                <rect
-                  x="550"
-                  y="500"
-                  width="100"
-                  height="60"
-                  fill="#dbeafe"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <line
-                  x1="550"
-                  y1="520"
-                  x2="650"
-                  y2="520"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <line
-                  x1="550"
-                  y1="535"
-                  x2="650"
-                  y2="535"
-                  stroke="#3b82f6"
-                  strokeWidth="2"
-                />
-                <text
-                  x="600"
-                  y="518"
-                  textAnchor="middle"
-                  className="text-xs font-semibold fill-slate-900"
-                >
-                  Payment DB
-                </text>
-                <text
-                  x="600"
-                  y="545"
-                  textAnchor="middle"
-                  className="text-xs fill-blue-600"
-                >
-                  D4
-                </text>
+                  <div className="flex-1 flex justify-center">
+                    <div className="flex flex-col items-center gap-2">
+                      <Store className="h-8 w-8 text-amber-600" />
+                      <div className="flex flex-col items-center gap-2 bg-linear-to-br from-amber-50 to-amber-100 border-2 border-amber-400 rounded-xl px-4 py-3 shadow-md w-28">
+                        <p className="text-xs font-semibold text-slate-900">
+                          Vendor
+                        </p>
+                        <p className="text-xs text-slate-700">Store</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                {/* Processes */}
-                {/* Process 1 - User Registration */}
-                <circle
-                  cx="300"
-                  cy="150"
-                  r="35"
-                  fill="#fef3c7"
-                  stroke="#f59e0b"
-                  strokeWidth="2"
-                />
-                <text
-                  x="300"
-                  y="148"
-                  textAnchor="middle"
-                  className="text-xs font-bold fill-slate-900"
-                >
-                  Register
-                </text>
-                <text
-                  x="300"
-                  y="160"
-                  textAnchor="middle"
-                  className="text-xs font-bold fill-slate-900"
-                >
-                  User
-                </text>
-                <text
-                  x="300"
-                  y="175"
-                  textAnchor="middle"
-                  className="text-xs fill-amber-600"
-                >
-                  1
-                </text>
-
-                {/* Process 2 - Product Search */}
-                <circle
-                  cx="300"
-                  cy="300"
-                  r="35"
-                  fill="#fef3c7"
-                  stroke="#f59e0b"
-                  strokeWidth="2"
-                />
-                <text
-                  x="300"
-                  y="298"
-                  textAnchor="middle"
-                  className="text-xs font-bold fill-slate-900"
-                >
-                  Search
-                </text>
-                <text
-                  x="300"
-                  y="310"
-                  textAnchor="middle"
-                  className="text-xs font-bold fill-slate-900"
-                >
-                  Products
-                </text>
-                <text
-                  x="300"
-                  y="325"
-                  textAnchor="middle"
-                  className="text-xs fill-amber-600"
-                >
-                  2
-                </text>
-
-                {/* Process 3 - Process Order */}
-                <circle
-                  cx="500"
-                  cy="200"
-                  r="35"
-                  fill="#fef3c7"
-                  stroke="#f59e0b"
-                  strokeWidth="2"
-                />
-                <text
-                  x="500"
-                  y="198"
-                  textAnchor="middle"
-                  className="text-xs font-bold fill-slate-900"
-                >
-                  Process
-                </text>
-                <text
-                  x="500"
-                  y="210"
-                  textAnchor="middle"
-                  className="text-xs font-bold fill-slate-900"
-                >
-                  Order
-                </text>
-                <text
-                  x="500"
-                  y="225"
-                  textAnchor="middle"
-                  className="text-xs fill-amber-600"
-                >
-                  3
-                </text>
-
-                {/* Process 4 - Payment Processing */}
-                <circle
-                  cx="500"
-                  cy="350"
-                  r="35"
-                  fill="#fef3c7"
-                  stroke="#f59e0b"
-                  strokeWidth="2"
-                />
-                <text
-                  x="500"
-                  y="348"
-                  textAnchor="middle"
-                  className="text-xs font-bold fill-slate-900"
-                >
-                  Process
-                </text>
-                <text
-                  x="500"
-                  y="360"
-                  textAnchor="middle"
-                  className="text-xs font-bold fill-slate-900"
-                >
-                  Payment
-                </text>
-                <text
-                  x="500"
-                  y="375"
-                  textAnchor="middle"
-                  className="text-xs fill-amber-600"
-                >
-                  4
-                </text>
-
-                {/* Data Flows */}
-                {/* Customer to Process 1 */}
-                <line
-                  x1="100"
-                  y1="280"
-                  x2="265"
-                  y2="185"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="180"
-                  y="235"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Registration Data
-                </text>
-
-                {/* Process 1 to Customer DB */}
-                <line
-                  x1="335"
-                  y1="150"
-                  x2="250"
-                  y2="110"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="295"
-                  y="125"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Store Customer
-                </text>
-
-                {/* Customer DB to Process 1 */}
-                <line
-                  x1="250"
-                  y1="110"
-                  x2="335"
-                  y2="150"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="295"
-                  y="135"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Customer Info
-                </text>
-
-                {/* Process 1 to Customer */}
-                <line
-                  x1="265"
-                  y1="185"
-                  x2="100"
-                  y2="280"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="180"
-                  y="235"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Confirmation
-                </text>
-
-                {/* Customer to Process 2 */}
-                <line
-                  x1="100"
-                  y1="280"
-                  x2="265"
-                  y2="335"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="180"
-                  y="315"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Search Query
-                </text>
-
-                {/* Process 2 to Product DB */}
-                <line
-                  x1="335"
-                  y1="300"
-                  x2="250"
-                  y2="500"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="295"
-                  y="405"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Query Products
-                </text>
-
-                {/* Product DB to Process 2 */}
-                <line
-                  x1="250"
-                  y1="500"
-                  x2="335"
-                  y2="300"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="295"
-                  y="405"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Product Results
-                </text>
-
-                {/* Process 2 to Customer */}
-                <line
-                  x1="265"
-                  y1="335"
-                  x2="100"
-                  y2="280"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="180"
-                  y="315"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Search Results
-                </text>
-
-                {/* Customer to Process 3 */}
-                <line
-                  x1="100"
-                  y1="280"
-                  x2="465"
-                  y2="235"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="280"
-                  y="255"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Order Details
-                </text>
-
-                {/* Process 3 to Order DB */}
-                <line
-                  x1="465"
-                  y1="235"
-                  x2="550"
-                  y2="110"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="510"
-                  y="170"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Store Order
-                </text>
-
-                {/* Order DB to Process 3 */}
-                <line
-                  x1="550"
-                  y1="110"
-                  x2="465"
-                  y2="235"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="510"
-                  y="170"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Order Status
-                </text>
-
-                {/* Process 3 to Process 4 */}
-                <line
-                  x1="500"
-                  y1="235"
-                  x2="500"
-                  y2="315"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="510"
-                  y="280"
-                  textAnchor="start"
-                  className="text-xs fill-slate-700"
-                >
-                  Payment Request
-                </text>
-
-                {/* Process 4 to Payment DB */}
-                <line
-                  x1="465"
-                  y1="385"
-                  x2="550"
-                  y2="500"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="510"
-                  y="450"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Store Payment
-                </text>
-
-                {/* Payment DB to Process 4 */}
-                <line
-                  x1="550"
-                  y1="500"
-                  x2="465"
-                  y2="385"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="510"
-                  y="450"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Payment Info
-                </text>
-
-                {/* Process 4 to Process 3 */}
-                <line
-                  x1="500"
-                  y1="315"
-                  x2="500"
-                  y2="235"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="490"
-                  y="280"
-                  textAnchor="end"
-                  className="text-xs fill-slate-700"
-                >
-                  Payment Status
-                </text>
-
-                {/* Process 3 to Customer */}
-                <line
-                  x1="465"
-                  y1="235"
-                  x2="100"
-                  y2="280"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="280"
-                  y="255"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Order Confirmation
-                </text>
-
-                {/* Vendor to Product DB */}
-                <line
-                  x1="700"
-                  y1="280"
-                  x2="650"
-                  y2="500"
-                  stroke="#8b5cf6"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-purple)"
-                />
-                <text
-                  x="680"
-                  y="395"
-                  textAnchor="middle"
-                  className="text-xs fill-slate-700"
-                >
-                  Product Updates
-                </text>
-              </svg>
+                {/* Data Flow Description */}
+                <div className="mt-12 w-full grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                  <div className="bg-white p-4 rounded-lg border border-slate-200">
+                    <p className="font-semibold text-slate-900 mb-2">
+                      Process 1: Register User
+                    </p>
+                    <p className="text-slate-700">
+                      Customer registration data → Store in Customer DB
+                    </p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border border-slate-200">
+                    <p className="font-semibold text-slate-900 mb-2">
+                      Process 2: Search Products
+                    </p>
+                    <p className="text-slate-700">
+                      Search query → Query Product DB → Return results
+                    </p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border border-slate-200">
+                    <p className="font-semibold text-slate-900 mb-2">
+                      Process 3: Process Order
+                    </p>
+                    <p className="text-slate-700">
+                      Order details → Store in Order DB → Confirmation
+                    </p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg border border-slate-200">
+                    <p className="font-semibold text-slate-900 mb-2">
+                      Process 4: Payment Processing
+                    </p>
+                    <p className="text-slate-700">
+                      Payment request → Process payment → Store in DB
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 

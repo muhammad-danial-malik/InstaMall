@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
-import { ArrowLeft, Link, CheckCircle } from "lucide-react";
+import { ArrowLeft, Link, CheckCircle, Network } from "lucide-react";
 
 export default function EntityRelationshipDiagram() {
   const navigate = useNavigate();
@@ -38,717 +38,844 @@ export default function EntityRelationshipDiagram() {
               <span className="w-3 h-3 bg-teal-500 rounded-full mr-3"></span>
               InstaMall Database Schema
             </h2>
-            <div className="bg-slate-50 rounded-lg p-6">
-              <svg viewBox="0 0 1000 700" className="w-full h-auto">
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              Complete Entity-Relationship Diagram showing database structure,
+              entities, and their relationships
+            </p>
+            <div className="w-full overflow-x-auto bg-slate-50 border-2 border-slate-200 rounded-lg">
+              <svg
+                viewBox="0 0 1600 900"
+                className="w-full min-w-max h-auto"
+                preserveAspectRatio="xMidYMid meet"
+                style={{ minHeight: "700px" }}
+              >
+                {/* Marker definitions */}
                 <defs>
                   <marker
-                    id="arrowhead-teal"
-                    markerWidth="10"
-                    markerHeight="7"
-                    refX="9"
-                    refY="3.5"
+                    id="relationship-arrow"
+                    markerWidth="15"
+                    markerHeight="15"
+                    refX="12"
+                    refY="7"
                     orient="auto"
+                    markerUnits="strokeWidth"
                   >
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#14b8a6" />
+                    <path d="M0,0 L0,14 L15,7 z" fill="#6b7280" />
                   </marker>
                   <marker
-                    id="diamond"
-                    markerWidth="12"
-                    markerHeight="12"
-                    refX="6"
-                    refY="6"
+                    id="one-to-many"
+                    markerWidth="20"
+                    markerHeight="20"
+                    refX="15"
+                    refY="10"
                     orient="auto"
                   >
-                    <polygon points="6 0, 12 6, 6 12, 0 6" fill="#14b8a6" />
+                    <circle cx="5" cy="10" r="3" fill="#ef4444" />
+                    <line
+                      x1="10"
+                      y1="10"
+                      x2="20"
+                      y2="10"
+                      stroke="#ef4444"
+                      strokeWidth="2"
+                    />
                   </marker>
                 </defs>
 
-                {/* User Entity */}
-                <rect
-                  x="50"
-                  y="50"
-                  width="150"
-                  height="180"
-                  fill="#f0fdfa"
-                  stroke="#14b8a6"
-                  strokeWidth="3"
-                  rx="10"
-                />
-                <text
-                  x="125"
-                  y="75"
-                  textAnchor="middle"
-                  className="text-lg font-bold fill-teal-900"
-                >
-                  USER
-                </text>
+                {/* Background */}
+                <rect width="1600" height="900" fill="#f8fafc" />
+
+                {/* ========== ROW 1: USER MANAGEMENT ========== */}
+
+                {/* USER Entity */}
+                <g>
+                  <rect
+                    x="50"
+                    y="40"
+                    width="200"
+                    height="200"
+                    fill="#f0fdfa"
+                    stroke="#14b8a6"
+                    strokeWidth="2"
+                    rx="4"
+                  />
+                  <line
+                    x1="50"
+                    y1="75"
+                    x2="250"
+                    y2="75"
+                    stroke="#14b8a6"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="50"
+                    y1="100"
+                    x2="250"
+                    y2="100"
+                    stroke="#14b8a6"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="150"
+                    y="65"
+                    textAnchor="middle"
+                    className="fill-teal-900 font-bold text-sm"
+                  >
+                    USER
+                  </text>
+                  <text
+                    x="60"
+                    y="118"
+                    className="fill-teal-800 text-xs font-semibold"
+                  >
+                    PK: user_id
+                  </text>
+                  <text x="60" y="135" className="fill-teal-700 text-xs">
+                    username
+                  </text>
+                  <text x="60" y="150" className="fill-teal-700 text-xs">
+                    email
+                  </text>
+                  <text x="60" y="165" className="fill-teal-700 text-xs">
+                    password_hash
+                  </text>
+                  <text x="60" y="180" className="fill-teal-700 text-xs">
+                    created_at
+                  </text>
+                  <text x="60" y="195" className="fill-teal-700 text-xs">
+                    user_type
+                  </text>
+                  <text x="60" y="225" className="fill-teal-600 text-xs italic">
+                    (Base Entity)
+                  </text>
+                </g>
+
+                {/* CUSTOMER Entity */}
+                <g>
+                  <rect
+                    x="330"
+                    y="40"
+                    width="200"
+                    height="200"
+                    fill="#f0fdfa"
+                    stroke="#14b8a6"
+                    strokeWidth="2"
+                    rx="4"
+                  />
+                  <line
+                    x1="330"
+                    y1="75"
+                    x2="530"
+                    y2="75"
+                    stroke="#14b8a6"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="330"
+                    y1="100"
+                    x2="530"
+                    y2="100"
+                    stroke="#14b8a6"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="430"
+                    y="65"
+                    textAnchor="middle"
+                    className="fill-teal-900 font-bold text-sm"
+                  >
+                    CUSTOMER
+                  </text>
+                  <text
+                    x="340"
+                    y="118"
+                    className="fill-teal-800 text-xs font-semibold"
+                  >
+                    PK,FK: customer_id
+                  </text>
+                  <text x="340" y="135" className="fill-teal-700 text-xs">
+                    first_name
+                  </text>
+                  <text x="340" y="150" className="fill-teal-700 text-xs">
+                    last_name
+                  </text>
+                  <text x="340" y="165" className="fill-teal-700 text-xs">
+                    phone
+                  </text>
+                  <text x="340" y="180" className="fill-teal-700 text-xs">
+                    address
+                  </text>
+                  <text
+                    x="340"
+                    y="225"
+                    className="fill-teal-600 text-xs italic"
+                  >
+                    (Specialization)
+                  </text>
+                </g>
+
+                {/* VENDOR Entity */}
+                <g>
+                  <rect
+                    x="610"
+                    y="40"
+                    width="200"
+                    height="200"
+                    fill="#f0fdfa"
+                    stroke="#14b8a6"
+                    strokeWidth="2"
+                    rx="4"
+                  />
+                  <line
+                    x1="610"
+                    y1="75"
+                    x2="810"
+                    y2="75"
+                    stroke="#14b8a6"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="610"
+                    y1="100"
+                    x2="810"
+                    y2="100"
+                    stroke="#14b8a6"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="710"
+                    y="65"
+                    textAnchor="middle"
+                    className="fill-teal-900 font-bold text-sm"
+                  >
+                    VENDOR
+                  </text>
+                  <text
+                    x="620"
+                    y="118"
+                    className="fill-teal-800 text-xs font-semibold"
+                  >
+                    PK,FK: vendor_id
+                  </text>
+                  <text x="620" y="135" className="fill-teal-700 text-xs">
+                    business_name
+                  </text>
+                  <text x="620" y="150" className="fill-teal-700 text-xs">
+                    tax_id
+                  </text>
+                  <text x="620" y="165" className="fill-teal-700 text-xs">
+                    rating
+                  </text>
+                  <text x="620" y="180" className="fill-teal-700 text-xs">
+                    status
+                  </text>
+                  <text
+                    x="620"
+                    y="225"
+                    className="fill-teal-600 text-xs italic"
+                  >
+                    (Specialization)
+                  </text>
+                </g>
+
+                {/* ========== ROW 2: PRODUCT & CATEGORY ========== */}
+
+                {/* CATEGORY Entity */}
+                <g>
+                  <rect
+                    x="330"
+                    y="350"
+                    width="200"
+                    height="150"
+                    fill="#fefce8"
+                    stroke="#eab308"
+                    strokeWidth="2"
+                    rx="4"
+                  />
+                  <line
+                    x1="330"
+                    y1="385"
+                    x2="530"
+                    y2="385"
+                    stroke="#eab308"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="330"
+                    y1="410"
+                    x2="530"
+                    y2="410"
+                    stroke="#eab308"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="430"
+                    y="375"
+                    textAnchor="middle"
+                    className="fill-yellow-900 font-bold text-sm"
+                  >
+                    CATEGORY
+                  </text>
+                  <text
+                    x="340"
+                    y="428"
+                    className="fill-yellow-800 text-xs font-semibold"
+                  >
+                    PK: category_id
+                  </text>
+                  <text x="340" y="445" className="fill-yellow-700 text-xs">
+                    name
+                  </text>
+                  <text x="340" y="460" className="fill-yellow-700 text-xs">
+                    description
+                  </text>
+                  <text x="340" y="475" className="fill-yellow-700 text-xs">
+                    icon_url
+                  </text>
+                </g>
+
+                {/* PRODUCT Entity */}
+                <g>
+                  <rect
+                    x="610"
+                    y="350"
+                    width="200"
+                    height="150"
+                    fill="#fefce8"
+                    stroke="#eab308"
+                    strokeWidth="2"
+                    rx="4"
+                  />
+                  <line
+                    x1="610"
+                    y1="385"
+                    x2="810"
+                    y2="385"
+                    stroke="#eab308"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="610"
+                    y1="410"
+                    x2="810"
+                    y2="410"
+                    stroke="#eab308"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="710"
+                    y="375"
+                    textAnchor="middle"
+                    className="fill-yellow-900 font-bold text-sm"
+                  >
+                    PRODUCT
+                  </text>
+                  <text
+                    x="620"
+                    y="428"
+                    className="fill-yellow-800 text-xs font-semibold"
+                  >
+                    PK: product_id
+                  </text>
+                  <text x="620" y="445" className="fill-yellow-700 text-xs">
+                    vendor_id (FK)
+                  </text>
+                  <text x="620" y="460" className="fill-yellow-700 text-xs">
+                    category_id (FK)
+                  </text>
+                  <text x="620" y="475" className="fill-yellow-700 text-xs">
+                    name, price, stock
+                  </text>
+                </g>
+
+                {/* ========== ROW 3: ORDER & TRANSACTIONS ========== */}
+
+                {/* ORDER Entity */}
+                <g>
+                  <rect
+                    x="50"
+                    y="650"
+                    width="200"
+                    height="150"
+                    fill="#fef2f2"
+                    stroke="#ef4444"
+                    strokeWidth="2"
+                    rx="4"
+                  />
+                  <line
+                    x1="50"
+                    y1="685"
+                    x2="250"
+                    y2="685"
+                    stroke="#ef4444"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="50"
+                    y1="710"
+                    x2="250"
+                    y2="710"
+                    stroke="#ef4444"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="150"
+                    y="675"
+                    textAnchor="middle"
+                    className="fill-red-900 font-bold text-sm"
+                  >
+                    ORDER
+                  </text>
+                  <text
+                    x="60"
+                    y="728"
+                    className="fill-red-800 text-xs font-semibold"
+                  >
+                    PK: order_id
+                  </text>
+                  <text x="60" y="745" className="fill-red-700 text-xs">
+                    customer_id (FK)
+                  </text>
+                  <text x="60" y="760" className="fill-red-700 text-xs">
+                    order_date, status
+                  </text>
+                  <text x="60" y="775" className="fill-red-700 text-xs">
+                    total_amount
+                  </text>
+                </g>
+
+                {/* ORDER_ITEM Entity */}
+                <g>
+                  <rect
+                    x="330"
+                    y="650"
+                    width="200"
+                    height="150"
+                    fill="#fef2f2"
+                    stroke="#ef4444"
+                    strokeWidth="2"
+                    rx="4"
+                  />
+                  <line
+                    x1="330"
+                    y1="685"
+                    x2="530"
+                    y2="685"
+                    stroke="#ef4444"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="330"
+                    y1="710"
+                    x2="530"
+                    y2="710"
+                    stroke="#ef4444"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="430"
+                    y="675"
+                    textAnchor="middle"
+                    className="fill-red-900 font-bold text-sm"
+                  >
+                    ORDER_ITEM
+                  </text>
+                  <text
+                    x="340"
+                    y="728"
+                    className="fill-red-800 text-xs font-semibold"
+                  >
+                    PK: order_item_id
+                  </text>
+                  <text x="340" y="745" className="fill-red-700 text-xs">
+                    order_id (FK)
+                  </text>
+                  <text x="340" y="760" className="fill-red-700 text-xs">
+                    product_id (FK)
+                  </text>
+                  <text x="340" y="775" className="fill-red-700 text-xs">
+                    quantity, unit_price
+                  </text>
+                </g>
+
+                {/* PAYMENT Entity */}
+                <g>
+                  <rect
+                    x="610"
+                    y="650"
+                    width="200"
+                    height="150"
+                    fill="#f3e8ff"
+                    stroke="#a855f7"
+                    strokeWidth="2"
+                    rx="4"
+                  />
+                  <line
+                    x1="610"
+                    y1="685"
+                    x2="810"
+                    y2="685"
+                    stroke="#a855f7"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="610"
+                    y1="710"
+                    x2="810"
+                    y2="710"
+                    stroke="#a855f7"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="710"
+                    y="675"
+                    textAnchor="middle"
+                    className="fill-purple-900 font-bold text-sm"
+                  >
+                    PAYMENT
+                  </text>
+                  <text
+                    x="620"
+                    y="728"
+                    className="fill-purple-800 text-xs font-semibold"
+                  >
+                    PK: payment_id
+                  </text>
+                  <text x="620" y="745" className="fill-purple-700 text-xs">
+                    order_id (FK)
+                  </text>
+                  <text x="620" y="760" className="fill-purple-700 text-xs">
+                    amount, method
+                  </text>
+                  <text x="620" y="775" className="fill-purple-700 text-xs">
+                    payment_date, status
+                  </text>
+                </g>
+
+                {/* ADDRESS Entity */}
+                <g>
+                  <rect
+                    x="890"
+                    y="650"
+                    width="200"
+                    height="150"
+                    fill="#f3e8ff"
+                    stroke="#a855f7"
+                    strokeWidth="2"
+                    rx="4"
+                  />
+                  <line
+                    x1="890"
+                    y1="685"
+                    x2="1090"
+                    y2="685"
+                    stroke="#a855f7"
+                    strokeWidth="1.5"
+                  />
+                  <line
+                    x1="890"
+                    y1="710"
+                    x2="1090"
+                    y2="710"
+                    stroke="#a855f7"
+                    strokeWidth="1.5"
+                  />
+                  <text
+                    x="990"
+                    y="675"
+                    textAnchor="middle"
+                    className="fill-purple-900 font-bold text-sm"
+                  >
+                    ADDRESS
+                  </text>
+                  <text
+                    x="900"
+                    y="728"
+                    className="fill-purple-800 text-xs font-semibold"
+                  >
+                    PK: address_id
+                  </text>
+                  <text x="900" y="745" className="fill-purple-700 text-xs">
+                    customer_id (FK)
+                  </text>
+                  <text x="900" y="760" className="fill-purple-700 text-xs">
+                    street, city, state
+                  </text>
+                  <text x="900" y="775" className="fill-purple-700 text-xs">
+                    zip_code, country
+                  </text>
+                </g>
+
+                {/* ========== RELATIONSHIPS ========== */}
+
+                {/* USER -> CUSTOMER (1:1 Inheritance) */}
                 <line
-                  x1="50"
-                  y1="85"
-                  x2="200"
-                  y2="85"
-                  stroke="#14b8a6"
+                  x1="150"
+                  y1="240"
+                  x2="150"
+                  y2="290"
+                  stroke="#6b7280"
                   strokeWidth="2"
+                  strokeDasharray="5,5"
+                />
+                <line
+                  x1="150"
+                  y1="290"
+                  x2="430"
+                  y2="290"
+                  stroke="#6b7280"
+                  strokeWidth="2"
+                  strokeDasharray="5,5"
+                />
+                <line
+                  x1="430"
+                  y1="290"
+                  x2="430"
+                  y2="40"
+                  stroke="#6b7280"
+                  strokeWidth="2"
+                  strokeDasharray="5,5"
                 />
                 <text
-                  x="60"
-                  y="105"
-                  className="text-sm font-semibold fill-teal-800"
+                  x="200"
+                  y="310"
+                  className="fill-slate-600 text-xs font-semibold"
                 >
-                  + user_id (PK)
-                </text>
-                <text x="60" y="125" className="text-sm fill-teal-700">
-                  + username
-                </text>
-                <text x="60" y="145" className="text-sm fill-teal-700">
-                  + email
-                </text>
-                <text x="60" y="165" className="text-sm fill-teal-700">
-                  + password_hash
-                </text>
-                <text x="60" y="185" className="text-sm fill-teal-700">
-                  + created_at
-                </text>
-                <text x="60" y="205" className="text-sm fill-teal-700">
-                  + user_type
+                  1:1 (IS-A)
                 </text>
 
-                {/* Customer Entity (inherits from User) */}
-                <rect
-                  x="50"
-                  y="280"
-                  width="150"
-                  height="120"
-                  fill="#f0fdfa"
-                  stroke="#14b8a6"
-                  strokeWidth="3"
-                  rx="10"
-                />
-                <text
-                  x="125"
-                  y="300"
-                  textAnchor="middle"
-                  className="text-lg font-bold fill-teal-900"
-                >
-                  CUSTOMER
-                </text>
+                {/* USER -> VENDOR (1:1 Inheritance) */}
                 <line
-                  x1="50"
-                  y1="310"
-                  x2="200"
+                  x1="150"
+                  y1="240"
+                  x2="150"
                   y2="310"
-                  stroke="#14b8a6"
+                  stroke="#6b7280"
                   strokeWidth="2"
+                  strokeDasharray="5,5"
                 />
-                <text
-                  x="60"
-                  y="330"
-                  className="text-sm font-semibold fill-teal-800"
-                >
-                  + customer_id (PK,FK)
-                </text>
-                <text x="60" y="350" className="text-sm fill-teal-700">
-                  + first_name
-                </text>
-                <text x="60" y="370" className="text-sm fill-teal-700">
-                  + last_name
-                </text>
-                <text x="60" y="390" className="text-sm fill-teal-700">
-                  + phone
-                </text>
-
-                {/* Vendor Entity (inherits from User) */}
-                <rect
-                  x="50"
-                  y="450"
-                  width="150"
-                  height="120"
-                  fill="#f0fdfa"
-                  stroke="#14b8a6"
-                  strokeWidth="3"
-                  rx="10"
-                />
-                <text
-                  x="125"
-                  y="470"
-                  textAnchor="middle"
-                  className="text-lg font-bold fill-teal-900"
-                >
-                  VENDOR
-                </text>
                 <line
-                  x1="50"
-                  y1="480"
-                  x2="200"
-                  y2="480"
-                  stroke="#14b8a6"
-                  strokeWidth="2"
-                />
-                <text
-                  x="60"
-                  y="500"
-                  className="text-sm font-semibold fill-teal-800"
-                >
-                  + vendor_id (PK,FK)
-                </text>
-                <text x="60" y="520" className="text-sm fill-teal-700">
-                  + business_name
-                </text>
-                <text x="60" y="540" className="text-sm fill-teal-700">
-                  + tax_id
-                </text>
-                <text x="60" y="560" className="text-sm fill-teal-700">
-                  + rating
-                </text>
-
-                {/* Product Entity */}
-                <rect
-                  x="300"
-                  y="50"
-                  width="150"
-                  height="180"
-                  fill="#fefce8"
-                  stroke="#eab308"
-                  strokeWidth="3"
-                  rx="10"
-                />
-                <text
-                  x="375"
-                  y="75"
-                  textAnchor="middle"
-                  className="text-lg font-bold fill-yellow-900"
-                >
-                  PRODUCT
-                </text>
-                <line
-                  x1="300"
-                  y1="85"
-                  x2="450"
-                  y2="85"
-                  stroke="#eab308"
-                  strokeWidth="2"
-                />
-                <text
-                  x="310"
-                  y="105"
-                  className="text-sm font-semibold fill-yellow-800"
-                >
-                  + product_id (PK)
-                </text>
-                <text x="310" y="125" className="text-sm fill-yellow-700">
-                  + vendor_id (FK)
-                </text>
-                <text x="310" y="145" className="text-sm fill-yellow-700">
-                  + name
-                </text>
-                <text x="310" y="165" className="text-sm fill-yellow-700">
-                  + description
-                </text>
-                <text x="310" y="185" className="text-sm fill-yellow-700">
-                  + price
-                </text>
-                <text x="310" y="205" className="text-sm fill-yellow-700">
-                  + stock_quantity
-                </text>
-
-                {/* Category Entity */}
-                <rect
-                  x="300"
-                  y="280"
-                  width="150"
-                  height="120"
-                  fill="#fefce8"
-                  stroke="#eab308"
-                  strokeWidth="3"
-                  rx="10"
-                />
-                <text
-                  x="375"
-                  y="300"
-                  textAnchor="middle"
-                  className="text-lg font-bold fill-yellow-900"
-                >
-                  CATEGORY
-                </text>
-                <line
-                  x1="300"
+                  x1="150"
                   y1="310"
-                  x2="450"
+                  x2="710"
                   y2="310"
-                  stroke="#eab308"
+                  stroke="#6b7280"
                   strokeWidth="2"
+                  strokeDasharray="5,5"
                 />
-                <text
-                  x="310"
-                  y="330"
-                  className="text-sm font-semibold fill-yellow-800"
-                >
-                  + category_id (PK)
-                </text>
-                <text x="310" y="350" className="text-sm fill-yellow-700">
-                  + name
-                </text>
-                <text x="310" y="370" className="text-sm fill-yellow-700">
-                  + description
-                </text>
-
-                {/* Order Entity */}
-                <rect
-                  x="550"
-                  y="50"
-                  width="150"
-                  height="180"
-                  fill="#fef2f2"
-                  stroke="#ef4444"
-                  strokeWidth="3"
-                  rx="10"
-                />
-                <text
-                  x="625"
-                  y="75"
-                  textAnchor="middle"
-                  className="text-lg font-bold fill-red-900"
-                >
-                  ORDER
-                </text>
                 <line
-                  x1="550"
-                  y1="85"
-                  x2="700"
-                  y2="85"
-                  stroke="#ef4444"
-                  strokeWidth="2"
-                />
-                <text
-                  x="560"
-                  y="105"
-                  className="text-sm font-semibold fill-red-800"
-                >
-                  + order_id (PK)
-                </text>
-                <text x="560" y="125" className="text-sm fill-red-700">
-                  + customer_id (FK)
-                </text>
-                <text x="560" y="145" className="text-sm fill-red-700">
-                  + order_date
-                </text>
-                <text x="560" y="165" className="text-sm fill-red-700">
-                  + total_amount
-                </text>
-                <text x="560" y="185" className="text-sm fill-red-700">
-                  + status
-                </text>
-                <text x="560" y="205" className="text-sm fill-red-700">
-                  + shipping_address
-                </text>
-
-                {/* Order_Item Entity */}
-                <rect
-                  x="550"
-                  y="280"
-                  width="150"
-                  height="140"
-                  fill="#fef2f2"
-                  stroke="#ef4444"
-                  strokeWidth="3"
-                  rx="10"
-                />
-                <text
-                  x="625"
-                  y="300"
-                  textAnchor="middle"
-                  className="text-lg font-bold fill-red-900"
-                >
-                  ORDER_ITEM
-                </text>
-                <line
-                  x1="550"
+                  x1="710"
                   y1="310"
-                  x2="700"
-                  y2="310"
-                  stroke="#ef4444"
+                  x2="710"
+                  y2="40"
+                  stroke="#6b7280"
                   strokeWidth="2"
+                  strokeDasharray="5,5"
                 />
                 <text
-                  x="560"
+                  x="450"
                   y="330"
-                  className="text-sm font-semibold fill-red-800"
+                  className="fill-slate-600 text-xs font-semibold"
                 >
-                  + order_item_id (PK)
-                </text>
-                <text x="560" y="350" className="text-sm fill-red-700">
-                  + order_id (FK)
-                </text>
-                <text x="560" y="370" className="text-sm fill-red-700">
-                  + product_id (FK)
-                </text>
-                <text x="560" y="390" className="text-sm fill-red-700">
-                  + quantity
-                </text>
-                <text x="560" y="410" className="text-sm fill-red-700">
-                  + unit_price
+                  1:1 (IS-A)
                 </text>
 
-                {/* Payment Entity */}
-                <rect
-                  x="800"
-                  y="50"
-                  width="150"
-                  height="160"
-                  fill="#f3e8ff"
-                  stroke="#a855f7"
-                  strokeWidth="3"
-                  rx="10"
-                />
-                <text
-                  x="875"
-                  y="75"
-                  textAnchor="middle"
-                  className="text-lg font-bold fill-purple-900"
-                >
-                  PAYMENT
-                </text>
+                {/* VENDOR -> PRODUCT (1:N) */}
                 <line
-                  x1="800"
-                  y1="85"
-                  x2="950"
-                  y2="85"
-                  stroke="#a855f7"
+                  x1="710"
+                  y1="240"
+                  x2="710"
+                  y2="300"
+                  stroke="#3b82f6"
                   strokeWidth="2"
                 />
-                <text
-                  x="810"
-                  y="105"
-                  className="text-sm font-semibold fill-purple-800"
-                >
-                  + payment_id (PK)
-                </text>
-                <text x="810" y="125" className="text-sm fill-purple-700">
-                  + order_id (FK)
-                </text>
-                <text x="810" y="145" className="text-sm fill-purple-700">
-                  + amount
-                </text>
-                <text x="810" y="165" className="text-sm fill-purple-700">
-                  + payment_method
-                </text>
-                <text x="810" y="185" className="text-sm fill-purple-700">
-                  + payment_date
-                </text>
-
-                {/* Address Entity */}
-                <rect
-                  x="800"
-                  y="280"
-                  width="150"
-                  height="140"
-                  fill="#f3e8ff"
-                  stroke="#a855f7"
-                  strokeWidth="3"
-                  rx="10"
-                />
-                <text
-                  x="875"
-                  y="300"
-                  textAnchor="middle"
-                  className="text-lg font-bold fill-purple-900"
-                >
-                  ADDRESS
-                </text>
                 <line
-                  x1="800"
-                  y1="310"
-                  x2="950"
-                  y2="310"
-                  stroke="#a855f7"
-                  strokeWidth="2"
-                />
-                <text
-                  x="810"
-                  y="330"
-                  className="text-sm font-semibold fill-purple-800"
-                >
-                  + address_id (PK)
-                </text>
-                <text x="810" y="350" className="text-sm fill-purple-700">
-                  + customer_id (FK)
-                </text>
-                <text x="810" y="370" className="text-sm fill-purple-700">
-                  + street
-                </text>
-                <text x="810" y="390" className="text-sm fill-purple-700">
-                  + city
-                </text>
-                <text x="810" y="410" className="text-sm fill-purple-700">
-                  + state
-                </text>
-                <text x="810" y="430" className="text-sm fill-purple-700">
-                  + zip_code
-                </text>
-
-                {/* Relationships */}
-                {/* User -> Customer (1:1) */}
-                <line
-                  x1="200"
-                  y1="160"
-                  x2="200"
-                  y2="280"
-                  stroke="#14b8a6"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx="200"
-                  cy="220"
-                  r="8"
-                  fill="white"
-                  stroke="#14b8a6"
-                  strokeWidth="2"
-                />
-                <circle cx="200" cy="220" r="4" fill="#14b8a6" />
-                <text x="215" y="225" className="text-xs fill-teal-700">
-                  1
-                </text>
-                <circle
-                  cx="200"
-                  cy="320"
-                  r="8"
-                  fill="white"
-                  stroke="#14b8a6"
-                  strokeWidth="2"
-                />
-                <circle cx="200" cy="320" r="4" fill="#14b8a6" />
-                <text x="215" y="325" className="text-xs fill-teal-700">
-                  1
-                </text>
-
-                {/* User -> Vendor (1:1) */}
-                <line
-                  x1="200"
-                  y1="200"
-                  x2="200"
-                  y2="450"
-                  stroke="#14b8a6"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx="200"
-                  cy="325"
-                  r="8"
-                  fill="white"
-                  stroke="#14b8a6"
-                  strokeWidth="2"
-                />
-                <circle cx="200" cy="325" r="4" fill="#14b8a6" />
-                <text x="215" y="330" className="text-xs fill-teal-700">
-                  1
-                </text>
-                <circle
-                  cx="200"
-                  cy="480"
-                  r="8"
-                  fill="white"
-                  stroke="#14b8a6"
-                  strokeWidth="2"
-                />
-                <circle cx="200" cy="480" r="4" fill="#14b8a6" />
-                <text x="215" y="485" className="text-xs fill-teal-700">
-                  1
-                </text>
-
-                {/* Vendor -> Product (1:N) */}
-                <line
-                  x1="200"
-                  y1="510"
-                  x2="300"
-                  y2="140"
-                  stroke="#eab308"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-teal)"
-                />
-                <circle
-                  cx="250"
-                  cy="325"
-                  r="8"
-                  fill="white"
-                  stroke="#eab308"
-                  strokeWidth="2"
-                />
-                <circle cx="250" cy="325" r="4" fill="#eab308" />
-                <text x="265" y="330" className="text-xs fill-yellow-700">
-                  1
-                </text>
-                <polygon points="300,140 290,130 310,130" fill="#eab308" />
-                <text x="315" y="145" className="text-xs fill-yellow-700">
-                  N
-                </text>
-
-                {/* Product -> Category (N:1) */}
-                <line
-                  x1="375"
-                  y1="230"
-                  x2="375"
-                  y2="280"
-                  stroke="#eab308"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-teal)"
-                />
-                <polygon points="375,280 365,270 385,270" fill="#eab308" />
-                <text x="390" y="285" className="text-xs fill-yellow-700">
-                  N
-                </text>
-                <circle
-                  cx="375"
-                  cy="310"
-                  r="8"
-                  fill="white"
-                  stroke="#eab308"
-                  strokeWidth="2"
-                />
-                <circle cx="375" cy="310" r="4" fill="#eab308" />
-                <text x="390" y="315" className="text-xs fill-yellow-700">
-                  1
-                </text>
-
-                {/* Customer -> Order (1:N) */}
-                <line
-                  x1="200"
-                  y1="340"
-                  x2="550"
-                  y2="140"
-                  stroke="#ef4444"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-teal)"
-                />
-                <circle
-                  cx="375"
-                  cy="240"
-                  r="8"
-                  fill="white"
-                  stroke="#ef4444"
-                  strokeWidth="2"
-                />
-                <circle cx="375" cy="240" r="4" fill="#ef4444" />
-                <text x="390" y="245" className="text-xs fill-red-700">
-                  1
-                </text>
-                <polygon points="550,140 540,130 560,130" fill="#ef4444" />
-                <text x="565" y="145" className="text-xs fill-red-700">
-                  N
-                </text>
-
-                {/* Order -> Order_Item (1:N) */}
-                <line
-                  x1="625"
-                  y1="230"
-                  x2="625"
-                  y2="280"
-                  stroke="#ef4444"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-teal)"
-                />
-                <circle
-                  cx="625"
-                  cy="255"
-                  r="8"
-                  fill="white"
-                  stroke="#ef4444"
-                  strokeWidth="2"
-                />
-                <circle cx="625" cy="255" r="4" fill="#ef4444" />
-                <text x="640" y="260" className="text-xs fill-red-700">
-                  1
-                </text>
-                <polygon points="625,280 615,270 635,270" fill="#ef4444" />
-                <text x="640" y="285" className="text-xs fill-red-700">
-                  N
-                </text>
-
-                {/* Order_Item -> Product (N:1) */}
-                <line
-                  x1="550"
-                  y1="350"
-                  x2="450"
-                  y2="140"
-                  stroke="#ef4444"
-                  strokeWidth="2"
-                  markerEnd="url(#arrowhead-teal)"
-                />
-                <polygon points="450,140 440,130 460,130" fill="#ef4444" />
-                <text x="465" y="145" className="text-xs fill-red-700">
-                  N
-                </text>
-                <circle
-                  cx="500"
-                  cy="245"
-                  r="8"
-                  fill="white"
-                  stroke="#ef4444"
-                  strokeWidth="2"
-                />
-                <circle cx="500" cy="245" r="4" fill="#ef4444" />
-                <text x="515" y="250" className="text-xs fill-red-700">
-                  1
-                </text>
-
-                {/* Order -> Payment (1:1) */}
-                <line
-                  x1="700"
-                  y1="140"
-                  x2="800"
-                  y2="130"
-                  stroke="#a855f7"
-                  strokeWidth="2"
-                />
-                <circle
-                  cx="750"
-                  cy="135"
-                  r="8"
-                  fill="white"
-                  stroke="#a855f7"
-                  strokeWidth="2"
-                />
-                <circle cx="750" cy="135" r="4" fill="#a855f7" />
-                <text x="765" y="140" className="text-xs fill-purple-700">
-                  1
-                </text>
-                <circle
-                  cx="800"
-                  cy="130"
-                  r="8"
-                  fill="white"
-                  stroke="#a855f7"
-                  strokeWidth="2"
-                />
-                <circle cx="800" cy="130" r="4" fill="#a855f7" />
-                <text x="815" y="135" className="text-xs fill-purple-700">
-                  1
-                </text>
-
-                {/* Customer -> Address (1:N) */}
-                <line
-                  x1="200"
-                  y1="380"
-                  x2="800"
+                  x1="710"
+                  y1="300"
+                  x2="710"
                   y2="350"
-                  stroke="#a855f7"
+                  stroke="#3b82f6"
                   strokeWidth="2"
-                  markerEnd="url(#arrowhead-teal)"
+                  markerEnd="url(#relationship-arrow)"
                 />
-                <circle
-                  cx="500"
-                  cy="365"
-                  r="8"
-                  fill="white"
-                  stroke="#a855f7"
-                  strokeWidth="2"
-                />
-                <circle cx="500" cy="365" r="4" fill="#a855f7" />
-                <text x="515" y="370" className="text-xs fill-purple-700">
-                  1
+                <text
+                  x="730"
+                  y="305"
+                  className="fill-blue-600 text-xs font-semibold"
+                >
+                  1:N
                 </text>
-                <polygon points="800,350 790,340 810,340" fill="#a855f7" />
-                <text x="815" y="355" className="text-xs fill-purple-700">
-                  N
+
+                {/* CATEGORY -> PRODUCT (1:N) */}
+                <line
+                  x1="430"
+                  y1="500"
+                  x2="430"
+                  y2="575"
+                  stroke="#3b82f6"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="430"
+                  y1="575"
+                  x2="710"
+                  y2="575"
+                  stroke="#3b82f6"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="710"
+                  y1="575"
+                  x2="710"
+                  y2="500"
+                  stroke="#3b82f6"
+                  strokeWidth="2"
+                  markerEnd="url(#relationship-arrow)"
+                />
+                <text
+                  x="550"
+                  y="585"
+                  className="fill-blue-600 text-xs font-semibold"
+                >
+                  1:N
+                </text>
+
+                {/* CUSTOMER -> ORDER (1:N) */}
+                <line
+                  x1="430"
+                  y1="240"
+                  x2="430"
+                  y2="590"
+                  stroke="#ef4444"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="430"
+                  y1="590"
+                  x2="150"
+                  y2="590"
+                  stroke="#ef4444"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="150"
+                  y1="590"
+                  x2="150"
+                  y2="650"
+                  stroke="#ef4444"
+                  strokeWidth="2"
+                  markerEnd="url(#relationship-arrow)"
+                />
+                <text
+                  x="360"
+                  y="600"
+                  className="fill-red-600 text-xs font-semibold"
+                >
+                  1:N
+                </text>
+
+                {/* ORDER -> ORDER_ITEM (1:N) */}
+                <line
+                  x1="250"
+                  y1="725"
+                  x2="330"
+                  y2="725"
+                  stroke="#ef4444"
+                  strokeWidth="2"
+                  markerEnd="url(#relationship-arrow)"
+                />
+                <text
+                  x="280"
+                  y="715"
+                  className="fill-red-600 text-xs font-semibold"
+                >
+                  1:N
+                </text>
+
+                {/* ORDER_ITEM -> PRODUCT (N:1) */}
+                <line
+                  x1="530"
+                  y1="680"
+                  x2="590"
+                  y2="680"
+                  stroke="#3b82f6"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="590"
+                  y1="680"
+                  x2="590"
+                  y2="425"
+                  stroke="#3b82f6"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="590"
+                  y1="425"
+                  x2="610"
+                  y2="425"
+                  stroke="#3b82f6"
+                  strokeWidth="2"
+                  markerEnd="url(#relationship-arrow)"
+                />
+                <text
+                  x="570"
+                  y="670"
+                  className="fill-blue-600 text-xs font-semibold"
+                >
+                  N:1
+                </text>
+
+                {/* ORDER -> PAYMENT (1:1) */}
+                <line
+                  x1="250"
+                  y1="725"
+                  x2="570"
+                  y2="725"
+                  stroke="#a855f7"
+                  strokeWidth="2"
+                  markerEnd="url(#relationship-arrow)"
+                />
+                <text
+                  x="390"
+                  y="715"
+                  className="fill-purple-600 text-xs font-semibold"
+                >
+                  1:1
+                </text>
+
+                {/* CUSTOMER -> ADDRESS (1:N) */}
+                <line
+                  x1="530"
+                  y1="140"
+                  x2="820"
+                  y2="140"
+                  stroke="#a855f7"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="820"
+                  y1="140"
+                  x2="820"
+                  y2="700"
+                  stroke="#a855f7"
+                  strokeWidth="2"
+                />
+                <line
+                  x1="820"
+                  y1="700"
+                  x2="890"
+                  y2="700"
+                  stroke="#a855f7"
+                  strokeWidth="2"
+                  markerEnd="url(#relationship-arrow)"
+                />
+                <text
+                  x="750"
+                  y="135"
+                  className="fill-purple-600 text-xs font-semibold"
+                >
+                  1:N
                 </text>
               </svg>
             </div>
