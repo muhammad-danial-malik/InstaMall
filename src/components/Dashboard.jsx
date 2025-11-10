@@ -20,6 +20,8 @@ import {
   Server,
   ShoppingCart,
   ClipboardList,
+  MonitorSmartphone,
+  Share2,
 } from "lucide-react";
 
 function Dashboard() {
@@ -125,6 +127,26 @@ function Dashboard() {
       bgColor: "bg-linear-to-br from-slate-500 to-slate-600",
       shadowColor: "shadow-slate-500/20",
       route: "/deployment-diagram",
+    },
+    {
+      title: "Prototype",
+      description:
+        "Interactive model or mockup demonstrating system functionality and user interface design before full development",
+      icon: MonitorSmartphone,
+      color: "text-white",
+      bgColor: "bg-linear-to-br from-cyan-500 to-cyan-600",
+      shadowColor: "shadow-cyan-500/20",
+      route: "/prototype",
+    },
+    {
+      title: "User Interface Flow",
+      description:
+        "Flow diagram depicting screen-to-screen navigation paths and user interaction routes within the application",
+      icon: Share2,
+      color: "text-white",
+      bgColor: "bg-linear-to-br from-sky-500 to-sky-600",
+      shadowColor: "shadow-sky-500/20",
+      route: "/ui-flow",
     },
   ];
 

@@ -698,6 +698,131 @@ export default function DeploymentDiagram() {
             </div>
           </div>
 
+          {/* AWS Architecture Overview */}
+          <div className="bg-white rounded-2xl shadow-xl p-8">
+            <h2 className="text-2xl font-bold text-slate-900 mb-6">
+              AWS Architecture Components
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Edge Layer */}
+              <div className="bg-linear-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-amber-900 mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-amber-500 rounded-full mr-2"></span>
+                  Edge Layer
+                </h3>
+                <ul className="text-amber-800 space-y-2 text-sm">
+                  <li>• <strong>CloudFront:</strong> Global CDN for static assets</li>
+                  <li>• <strong>Route 53:</strong> DNS routing and health checks</li>
+                  <li>• <strong>Web ACL:</strong> DDoS protection and WAF rules</li>
+                </ul>
+              </div>
+
+              {/* Load Balancing */}
+              <div className="bg-linear-to-br from-yellow-50 to-yellow-100 border border-yellow-200 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-yellow-900 mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></span>
+                  Load Balancing
+                </h3>
+                <ul className="text-yellow-800 space-y-2 text-sm">
+                  <li>• <strong>Application Load Balancer:</strong> Layer 7 routing</li>
+                  <li>• <strong>Auto Scaling:</strong> Dynamic capacity management</li>
+                  <li>• <strong>Health Checks:</strong> Automatic instance replacement</li>
+                </ul>
+              </div>
+
+              {/* Application Tier */}
+              <div className="bg-linear-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-blue-900 mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-blue-500 rounded-full mr-2"></span>
+                  Application Tier
+                </h3>
+                <ul className="text-blue-800 space-y-2 text-sm">
+                  <li>• <strong>EC2 Instances:</strong> Web and app servers</li>
+                  <li>• <strong>Security Groups:</strong> Network access control</li>
+                  <li>• <strong>IAM Roles:</strong> Service permissions & credentials</li>
+                </ul>
+              </div>
+
+              {/* API Gateway */}
+              <div className="bg-linear-to-br from-indigo-50 to-indigo-100 border border-indigo-200 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-indigo-900 mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-indigo-500 rounded-full mr-2"></span>
+                  API Gateway
+                </h3>
+                <ul className="text-indigo-800 space-y-2 text-sm">
+                  <li>• <strong>REST APIs:</strong> Endpoint management</li>
+                  <li>• <strong>API Keys:</strong> Client authentication</li>
+                  <li>• <strong>Rate Limiting:</strong> Throttling & quotas</li>
+                </ul>
+              </div>
+
+              {/* Microservices */}
+              <div className="bg-linear-to-br from-green-50 to-green-100 border border-green-200 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-green-900 mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
+                  Microservices
+                </h3>
+                <ul className="text-green-800 space-y-2 text-sm">
+                  <li>• <strong>Order Service:</strong> Transaction management</li>
+                  <li>• <strong>Product Service:</strong> Catalog operations</li>
+                  <li>• <strong>User Service:</strong> Profile & authentication</li>
+                </ul>
+              </div>
+
+              {/* Database Tier */}
+              <div className="bg-linear-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-purple-900 mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-purple-500 rounded-full mr-2"></span>
+                  Database Tier
+                </h3>
+                <ul className="text-purple-800 space-y-2 text-sm">
+                  <li>• <strong>RDS Aurora:</strong> Multi-AZ replication</li>
+                  <li>• <strong>Read Replicas:</strong> Read performance scaling</li>
+                  <li>• <strong>Automated Backups:</strong> Point-in-time recovery</li>
+                </ul>
+              </div>
+
+              {/* Storage */}
+              <div className="bg-linear-to-br from-cyan-50 to-cyan-100 border border-cyan-200 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-cyan-900 mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-cyan-500 rounded-full mr-2"></span>
+                  Storage
+                </h3>
+                <ul className="text-cyan-800 space-y-2 text-sm">
+                  <li>• <strong>S3 Buckets:</strong> Object storage for assets</li>
+                  <li>• <strong>EBS Volumes:</strong> Persistent block storage</li>
+                  <li>• <strong>Versioning:</strong> File history & recovery</li>
+                </ul>
+              </div>
+
+              {/* Caching & Queue */}
+              <div className="bg-linear-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-orange-900 mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-orange-500 rounded-full mr-2"></span>
+                  Caching & Messaging
+                </h3>
+                <ul className="text-orange-800 space-y-2 text-sm">
+                  <li>• <strong>ElastiCache:</strong> In-memory caching</li>
+                  <li>• <strong>SQS:</strong> Message queuing service</li>
+                  <li>• <strong>SNS:</strong> Event notifications</li>
+                </ul>
+              </div>
+
+              {/* Monitoring & Logging */}
+              <div className="bg-linear-to-br from-red-50 to-red-100 border border-red-200 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-red-900 mb-4 flex items-center">
+                  <span className="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
+                  Monitoring & Logging
+                </h3>
+                <ul className="text-red-800 space-y-2 text-sm">
+                  <li>• <strong>CloudWatch:</strong> Metrics & alarms</li>
+                  <li>• <strong>CloudTrail:</strong> API audit logging</li>
+                  <li>• <strong>X-Ray:</strong> Distributed tracing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           {/* Development & Staging Environments */}
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">

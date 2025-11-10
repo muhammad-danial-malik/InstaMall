@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 
-// Import all page components
 import FullProjectDocumentation from "./pages/FullProjectDocumentation";
 import UseCaseDiagram from "./pages/UseCaseDiagram";
 import ClassDiagram from "./pages/ClassDiagram";
@@ -11,6 +10,8 @@ import EntityRelationshipDiagram from "./pages/EntityRelationshipDiagram";
 import ComponentDiagram from "./pages/ComponentDiagram";
 import RequirementEngineering from "./pages/RequirementEngineering";
 import DeploymentDiagram from "./pages/DeploymentDiagram";
+import Prototype from "./pages/Prototype";
+import UserInterfaceFlow from "./pages/UserInterfaceFlow";
 import Dashboard from "./components/Dashboard";
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
         element={<RequirementEngineering />}
       />
       <Route path="/deployment-diagram" element={<DeploymentDiagram />} />
+      <Route path="/prototype" element={<Prototype />} />
+      <Route path="/ui-flow" element={<UserInterfaceFlow />} />
     </Routes>
   );
 }
